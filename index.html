@@ -192,8 +192,8 @@
             <p class="opacity-75 mb-4">Grab our deal of the day at an unparalleled discount. 40 hours battery life, hybrid active noise cancellation, and premium leather comforts.</p>
             
             <div class="d-flex align-items-center gap-3 mb-4">
-              <span class="h2 text-secondary font-weight-bold mb-0">1,299</span>
-              <del class="text-white opacity-50">1,499</del>
+              <span class="h2 text-secondary font-weight-bold mb-0">Rs 1,299.00</span>
+              <del class="text-white opacity-50">Rs 1,499.00</del>
               <span class="badge bg-danger">13% OFF</span>
             </div>
 
@@ -426,8 +426,8 @@
         </div>
         <div class="col-md-3">
           <h6 class="footer-title">Contact Office</h6>
-          <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 104 Aura Boulevard, Suite 500, California</p>
-          <p class="small text-muted mb-2"><i class="bi bi-telephone me-2 text-primary"></i> +1 (800) AURA-STYLE</p>
+          <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 104 Aura Boulevard, BKC, Mumbai, Maharashtra</p>
+          <p class="small text-muted mb-2"><i class="bi bi-telephone me-2 text-primary"></i> +91 (800) AURA-STYLE</p>
           <p class="small text-muted mb-2"><i class="bi bi-envelope me-2 text-primary"></i> support@aurastyle.com</p>
         </div>
       </div>
@@ -470,8 +470,8 @@
             
             grid.innerHTML = latest.map(p => {
               const priceHTML = p.discountPrice 
-                ? `<span class="product-price">{p.discountPrice.toFixed(2)}</span> <span class="product-price-old">{p.price.toFixed(2)}</span>`
-                : `<span class="product-price">{p.price.toFixed(2)}</span>`;
+                ? `<span class="product-price">${window.formatPrice(p.discountPrice)}</span> <span class="product-price-old">${window.formatPrice(p.price)}</span>`
+                : `<span class="product-price">${window.formatPrice(p.price)}</span>`;
 
               const ratingStars = getStarRatingHTML(p.rating);
 
@@ -480,25 +480,25 @@
                   <div class="product-card">
                     <span class="product-badge product-badge-new">New</span>
                     <div class="product-img-wrapper">
-                      <img src="{p.images[0]}" alt="{p.name}" loading="lazy">
+                      <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
                       <div class="product-actions">
-                        <button onclick="openQuickView({p.id})" class="btn btn-sm btn-light border shadow-sm">
+                        <button onclick="openQuickView(${p.id})" class="btn btn-sm btn-light border shadow-sm">
                           <i class="bi bi-eye"></i> Quick View
                         </button>
-                        <button onclick="AuraState.addToCart({p.id})" class="btn btn-sm btn-primary shadow-sm">
+                        <button onclick="AuraState.addToCart(${p.id})" class="btn btn-sm btn-primary shadow-sm">
                           <i class="bi bi-cart-plus"></i> Add
                         </button>
                       </div>
                     </div>
                     <div class="product-body">
-                      <span class="product-category">{p.category}</span>
-                      <a href="product-view.html?id={p.id}"><h5 class="product-title-text">{p.name}</h5></a>
+                      <span class="product-category">${p.category}</span>
+                      <a href="product-view.html?id=${p.id}"><h5 class="product-title-text">${p.name}</h5></a>
                       <div class="product-rating">
-                        {ratingStars}
-                        <span class="product-rating-count">({p.reviewsCount})</span>
+                        ${ratingStars}
+                        <span class="product-rating-count">(${p.reviewsCount})</span>
                       </div>
                       <div class="product-price-wrapper">
-                        {priceHTML}
+                        ${priceHTML}
                       </div>
                     </div>
                   </div>

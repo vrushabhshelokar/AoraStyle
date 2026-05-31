@@ -83,25 +83,25 @@ function renderCartPage() {
       <div class="card mb-3 border border-slate-subtle rounded shadow-sm">
         <div class="row g-0 align-items-center p-3">
           <div class="col-3 col-md-2">
-            <img src="{product.images[0]}" alt="{product.name}" class="img-fluid rounded border" style="object-fit: cover; aspect-ratio: 1; max-height: 80px;">
+            <img src="${product.images[0]}" alt="${product.name}" class="img-fluid rounded border" style="object-fit: cover; aspect-ratio: 1; max-height: 80px;">
           </div>
           <div class="col-9 col-md-4 ps-3 ps-md-4">
-            <span class="text-xs text-muted uppercase tracking-wider" style="font-size:0.75rem;">{product.category}</span>
-            <a href="product-view.html?id={product.id}"><h6 class="mb-1 font-weight-bold text-dark text-truncate">{product.name}</h6></a>
-            <div class="text-primary font-weight-bold" style="font-size: 0.95rem;">{itemPrice.toFixed(2)}</div>
+            <span class="text-xs text-muted uppercase tracking-wider" style="font-size:0.75rem;">${product.category}</span>
+            <a href="product-view.html?id=${product.id}"><h6 class="mb-1 font-weight-bold text-dark text-truncate">${product.name}</h6></a>
+            <div class="text-primary font-weight-bold" style="font-size: 0.95rem;">${window.formatPrice(itemPrice)}</div>
           </div>
           <div class="col-6 col-md-3 mt-3 mt-md-0 d-flex justify-content-start justify-content-md-center">
             <div class="input-group input-group-sm" style="width: 100px;">
-              <button class="btn btn-outline-secondary" type="button" onclick="updateCartItemQty({product.id}, {cartItem.quantity - 1})">-</button>
-              <input type="text" class="form-control text-center bg-white" value="{cartItem.quantity}" readonly>
-              <button class="btn btn-outline-secondary" type="button" onclick="updateCartItemQty({product.id}, {cartItem.quantity + 1})">+</button>
+              <button class="btn btn-outline-secondary" type="button" onclick="updateCartItemQty(${product.id}, ${cartItem.quantity - 1})">-</button>
+              <input type="text" class="form-control text-center bg-white" value="${cartItem.quantity}" readonly>
+              <button class="btn btn-outline-secondary" type="button" onclick="updateCartItemQty(${product.id}, ${cartItem.quantity + 1})">+</button>
             </div>
           </div>
           <div class="col-4 col-md-2 mt-3 mt-md-0 text-start text-md-end">
-            <div class="font-weight-bold text-dark" style="font-size: 1rem; font-weight:600;">{rowTotal.toFixed(2)}</div>
+            <div class="font-weight-bold text-dark" style="font-size: 1rem; font-weight:600;">${window.formatPrice(rowTotal)}</div>
           </div>
           <div class="col-2 col-md-1 mt-3 mt-md-0 text-end">
-            <button onclick="removeCartItem({product.id})" class="btn btn-link text-danger p-0" title="Remove Item">
+            <button onclick="removeCartItem(${product.id})" class="btn btn-link text-danger p-0" title="Remove Item">
               <i class="bi bi-trash3-fill" style="font-size: 1.1rem;"></i>
             </button>
           </div>
@@ -150,7 +150,7 @@ function renderCartPage() {
     if (appliedCoupon) {
       couponFeedbackHTML = `
         <div class="alert alert-success d-flex justify-content-between align-items-center py-2 px-3 mb-3 small">
-          <span><i class="bi bi-tag-fill me-1"></i> Coupon <strong>{appliedCoupon.code}</strong> applied!</span>
+          <span><i class="bi bi-tag-fill me-1"></i> Coupon <strong>${appliedCoupon.code}</strong> applied!</span>
           <button onclick="removeCouponCode()" class="btn btn-sm btn-close" aria-label="Remove Coupon"></button>
         </div>
       `;
@@ -163,33 +163,33 @@ function renderCartPage() {
           
           <div class="d-flex justify-content-between mb-2">
             <span class="text-muted">Subtotal</span>
-            <span class="font-weight-bold text-dark">{subtotal.toFixed(2)}</span>
+            <span class="font-weight-bold text-dark">${window.formatPrice(subtotal)}</span>
           </div>
 
-          {appliedCoupon ? `
+          ${appliedCoupon ? `
           <div class="d-flex justify-content-between mb-2 text-success">
-            <span>Discount ({appliedCoupon.discountPercent ? appliedCoupon.discountPercent + '%' : 'Free Shipping'})</span>
-            <span>-{discountAmount.toFixed(2)}</span>
+            <span>Discount (${appliedCoupon.discountPercent ? appliedCoupon.discountPercent + '%' : 'Free Shipping'})</span>
+            <span>-${window.formatPrice(discountAmount)}</span>
           </div>
           ` : ''}
 
           <div class="d-flex justify-content-between mb-2">
             <span class="text-muted">Estimated Tax (8%)</span>
-            <span class="font-weight-bold text-dark">{taxAmount.toFixed(2)}</span>
+            <span class="font-weight-bold text-dark">${window.formatPrice(taxAmount)}</span>
           </div>
 
           <div class="d-flex justify-content-between mb-3">
             <span class="text-muted">Shipping</span>
             <span class="font-weight-bold text-dark">
-              {shippingCost === 0 ? '<span class="text-success">Free</span>' : `{shippingCost.toFixed(2)}`}
+              ${shippingCost === 0 ? '<span class="text-success">Free</span>' : `${window.formatPrice(shippingCost)}`}
             </span>
           </div>
 
-          {couponFeedbackHTML}
+          ${couponFeedbackHTML}
 
           <div class="d-flex justify-content-between mb-4 pt-3 border-top">
             <span class="h5 font-weight-bold text-dark mb-0">Grand Total</span>
-            <span class="h4 font-weight-bold text-primary mb-0">{grandTotal.toFixed(2)}</span>
+            <span class="h4 font-weight-bold text-primary mb-0">${window.formatPrice(grandTotal)}</span>
           </div>
 
           <a href="checkout.html" class="btn btn-primary w-100 py-3 font-weight-bold rounded">

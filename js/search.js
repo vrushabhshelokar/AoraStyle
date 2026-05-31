@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
       performSearch(term);
       
       // Update browser history query state without reloading
-      const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + `?q={encodeURIComponent(term)}`;
+      const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + `?q=${encodeURIComponent(term)}`;
       window.history.pushState({ path: newUrl }, '', newUrl);
     });
   }
@@ -65,7 +65,7 @@ function performSearch(term) {
       p.category.toLowerCase().includes(normalizedTerm) ||
       p.description.toLowerCase().includes(normalizedTerm)
     );
-    if (queryTitle) queryTitle.textContent = `Search Results for "{term}" ({matches.length} found)`;
+    if (queryTitle) queryTitle.textContent = `Search Results for "${term}" (${matches.length} found)`;
   }
 
   if (matches.length === 0) {
@@ -83,8 +83,8 @@ function performSearch(term) {
   // Render cards
   grid.innerHTML = matches.map(p => {
     const priceHTML = p.discountPrice 
-      ? `<span class="product-price">{p.discountPrice.toFixed(2)}</span> <span class="product-price-old">{p.price.toFixed(2)}</span>`
-      : `<span class="product-price">{p.price.toFixed(2)}</span>`;
+      ? `<span class="product-price">${window.formatPrice(p.discountPrice)}</span> <span class="product-price-old">${window.formatPrice(p.price)}</span>`
+      : `<span class="product-price">${window.formatPrice(p.price)}</span>`;
 
     const badgeHTML = p.discountPrice
       ? `<span class="product-badge product-badge-sale">Sale</span>`
@@ -95,27 +95,27 @@ function performSearch(term) {
     return `
       <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
         <div class="product-card">
-          {badgeHTML}
+          ${badgeHTML}
           <div class="product-img-wrapper">
-            <img src="{p.images[0]}" alt="{p.name}" loading="lazy">
+            <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
             <div class="product-actions">
-              <button onclick="openQuickView({p.id})" class="btn btn-sm btn-light border shadow-sm">
+              <button onclick="openQuickView(${p.id})" class="btn btn-sm btn-light border shadow-sm">
                 <i class="bi bi-eye"></i> Quick View
               </button>
-              <button onclick="AuraState.addToCart({p.id})" class="btn btn-sm btn-primary shadow-sm">
+              <button onclick="AuraState.addToCart(${p.id})" class="btn btn-sm btn-primary shadow-sm">
                 <i class="bi bi-cart-plus"></i> Add
               </button>
             </div>
           </div>
           <div class="product-body">
-            <span class="product-category">{p.category}</span>
-            <a href="product-view.html?id={p.id}"><h5 class="product-title-text">{p.name}</h5></a>
+            <span class="product-category">${p.category}</span>
+            <a href="product-view.html?id=${p.id}"><h5 class="product-title-text">${p.name}</h5></a>
             <div class="product-rating">
-              {ratingStars}
-              <span class="product-rating-count">({p.reviewsCount})</span>
+              ${ratingStars}
+              <span class="product-rating-count">(${p.reviewsCount})</span>
             </div>
             <div class="product-price-wrapper">
-              {priceHTML}
+              ${priceHTML}
             </div>
           </div>
         </div>

@@ -88,7 +88,7 @@
               <div class="fs-4 text-primary"><i class="bi bi-geo-alt-fill"></i></div>
               <div>
                 <h6 class="font-weight-bold text-dark mb-1">Company Headquarters</h6>
-                <p class="text-muted small mb-0">104 Aura Boulevard, Suite 500, San Francisco, California</p>
+                <p class="text-muted small mb-0">104 Aura Boulevard, BKC, Mumbai, Maharashtra</p>
               </div>
             </div>
 
@@ -96,8 +96,8 @@
               <div class="fs-4 text-primary"><i class="bi bi-telephone-fill"></i></div>
               <div>
                 <h6 class="font-weight-bold text-dark mb-1">Telephone Line</h6>
-                <p class="text-muted small mb-1">+1 (800) AURA-STYLE</p>
-                <p class="text-muted small mb-0" style="font-size:0.8rem;">Monday - Friday: 9 AM - 6 PM PST</p>
+                <p class="text-muted small mb-1">+91 (800) AURA-STYLE</p>
+                <p class="text-muted small mb-0" style="font-size:0.8rem;">Monday - Friday: 9 AM - 6 PM IST</p>
               </div>
             </div>
 
@@ -115,7 +115,7 @@
             <div class="w-100 h-100 bg-secondary-subtle d-flex flex-column align-items-center justify-content-center text-center p-4">
               <i class="bi bi-map display-4 text-muted mb-2"></i>
               <h6 class="font-weight-bold text-dark">Interactive Map Location</h6>
-              <p class="text-muted small mb-0" style="max-width: 250px;">104 Aura Boulevard, San Francisco, CA</p>
+              <p class="text-muted small mb-0" style="max-width: 250px;">104 Aura Boulevard, BKC, Mumbai, MH</p>
               <div class="mt-3 text-xs bg-white px-3 py-1 rounded shadow-sm border text-muted small" style="font-size: 0.75rem;">Google Maps API Connected</div>
             </div>
           </div>
@@ -194,8 +194,8 @@
         </div>
         <div class="col-md-3">
           <h6 class="footer-title">Contact Office</h6>
-          <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 104 Aura Boulevard, Suite 500, California</p>
-          <p class="small text-muted mb-2"><i class="bi bi-telephone me-2 text-primary"></i> +1 (800) AURA-STYLE</p>
+          <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 104 Aura Boulevard, BKC, Mumbai, Maharashtra</p>
+          <p class="small text-muted mb-2"><i class="bi bi-telephone me-2 text-primary"></i> +91 (800) AURA-STYLE</p>
           <p class="small text-muted mb-2"><i class="bi bi-envelope me-2 text-primary"></i> support@aurastyle.com</p>
         </div>
       </div>
@@ -226,8 +226,8 @@
   
   <!-- Inline validate code for contact page form -->
   <script>
-    (document).ready(function() {
-      ("#contact-form").validate({
+    $(document).ready(function() {
+      $("#contact-form").validate({
         rules: {
           contactName: "required",
           contactEmail: {
@@ -254,12 +254,12 @@
         },
         submitHandler: function(form) {
           // Hide fields, trigger success alert, clear form
-          ("#contact-success-alert").removeClass("d-none");
+          $("#contact-success-alert").removeClass("d-none");
           AuraState.showToast("Message sent successfully!", "success");
           form.reset();
           
           setTimeout(() => {
-            ("#contact-success-alert").addClass("d-none");
+            $("#contact-success-alert").addClass("d-none");
           }, 6000);
         }
       });

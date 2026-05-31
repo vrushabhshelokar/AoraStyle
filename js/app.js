@@ -4,6 +4,18 @@
  * toast alerts, and scroll interactions.
  */
 
+// Price formatter for Indian Rupee conventions
+window.formatPrice = function(amount) {
+  if (amount === null || amount === undefined) return '';
+  const num = typeof amount === 'string' ? parseFloat(amount) : amount;
+  if (isNaN(num)) return '';
+  const formatter = new Intl.NumberFormat('en-IN', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+  return 'Rs ' + formatter.format(num);
+};
+
 // Local products database to prevent CORS issues when opening files directly via file://
 window.AuraProducts = [
   {
@@ -600,15 +612,15 @@ window.AuraState = {
     }
 
     const toast = document.createElement('div');
-    toast.className = `aura-toast toast-{type}`;
+    toast.className = `aura-toast toast-${type}`;
     
     const icon = type === 'success' 
       ? '<i class="bi bi-check-circle-fill text-success"></i>' 
       : '<i class="bi bi-exclamation-circle-fill text-danger"></i>';
 
     toast.innerHTML = `
-      {icon}
-      <span class="small font-weight-bold">{message}</span>
+      ${icon}
+      <span class="small font-weight-bold">${message}</span>
     `;
 
     container.appendChild(toast);
@@ -701,14 +713,14 @@ window.AuraState = {
         ).slice(0, 5); // Limit suggestions to top 5
 
         if (matches.length === 0) {
-          suggestionsBox.innerHTML = `<div class="p-3 text-muted small text-center">No matches found for "{e.target.value}"</div>`;
+          suggestionsBox.innerHTML = `<div class="p-3 text-muted small text-center">No matches found for "${e.target.value}"</div>`;
         } else {
           suggestionsBox.innerHTML = matches.map(p => `
-            <div class="suggestion-item" data-id="{p.id}">
-              <img src="{p.images[0]}" alt="{p.name}" class="suggestion-img">
+            <div class="suggestion-item" data-id="${p.id}">
+              <img src="${p.images[0]}" alt="${p.name}" class="suggestion-img">
               <div>
-                <div class="small font-weight-bold text-dark text-truncate" style="max-width: 180px;">{p.name}</div>
-                <div class="text-xs text-muted" style="font-size: 0.75rem;">{(p.discountPrice || p.price).toFixed(2)}</div>
+                <div class="small font-weight-bold text-dark text-truncate" style="max-width: 180px;">${p.name}</div>
+                <div class="text-xs text-muted" style="font-size: 0.75rem;">${window.formatPrice(p.discountPrice || p.price)}</div>
               </div>
             </div>
           `).join('');
@@ -717,7 +729,7 @@ window.AuraState = {
           suggestionsBox.querySelectorAll('.suggestion-item').forEach(item => {
             item.addEventListener('click', () => {
               const id = item.getAttribute('data-id');
-              window.location.href = `product-view.html?id={id}`;
+              window.location.href = `product-view.html?id=${id}`;
             });
           });
         }
@@ -738,7 +750,7 @@ window.AuraState = {
           e.preventDefault();
           const query = input.value.trim();
           if (query) {
-            window.location.href = `search.html?q={encodeURIComponent(query)}`;
+            window.location.href = `search.html?q=${encodeURIComponent(query)}`;
           }
         });
       }

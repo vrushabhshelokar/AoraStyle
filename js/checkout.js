@@ -4,7 +4,7 @@
  * implements shipping/billing forms jQuery validation, and processes payment.
  */
 
-(document).ready(function() {
+$(document).ready(function() {
   const checkoutItemsContainer = document.getElementById('checkout-items-summary');
   if (!checkoutItemsContainer) return; // Exit if not on checkout page
 
@@ -33,18 +33,18 @@
     });
 
   // Toggle billing address fields if "same as shipping" is checked
-  ('#same-address').on('change', function() {
+  $('#same-address').on('change', function() {
     if (this.checked) {
-      ('#billing-fields-wrapper').slideUp();
+      $('#billing-fields-wrapper').slideUp();
     } else {
-      ('#billing-fields-wrapper').slideDown();
+      $('#billing-fields-wrapper').slideDown();
     }
   });
 
   // Coupon handling on checkout page
-  ('#checkout-coupon-form').on('submit', function(e) {
+  $('#checkout-coupon-form').on('submit', function(e) {
     e.preventDefault();
-    const code = ('#checkout-coupon-code').val().trim().toUpperCase();
+    const code = $('#checkout-coupon-code').val().trim().toUpperCase();
     if (!code) return;
 
     let applied = null;
@@ -66,7 +66,7 @@
   });
 
   // Setup jQuery Form Validation
-  ("#checkout-form").validate({
+  $("#checkout-form").validate({
     rules: {
       firstName: "required",
       lastName: "required",
@@ -172,10 +172,10 @@ function renderCheckoutSummary(products, totals) {
     itemsHTML += `
       <div class="d-flex justify-content-between align-items-center mb-3">
         <div style="max-width: 75%;">
-          <span class="badge bg-secondary me-2">{item.quantity}</span>
-          <span class="small font-weight-bold text-dark text-truncate d-inline-block align-middle" style="max-width: 170px;">{p.name}</span>
+          <span class="badge bg-secondary me-2">${item.quantity}</span>
+          <span class="small font-weight-bold text-dark text-truncate d-inline-block align-middle" style="max-width: 170px;">${p.name}</span>
         </div>
-        <span class="text-dark small font-weight-bold">{(itemPrice * item.quantity).toFixed(2)}</span>
+        <span class="text-dark small font-weight-bold">${window.formatPrice(itemPrice * item.quantity)}</span>
       </div>
     `;
   });
@@ -185,24 +185,24 @@ function renderCheckoutSummary(products, totals) {
 }
 
 function updateTotalsUI(totals) {
-  ('#checkout-subtotal').text(`{totals.subtotal.toFixed(2)}`);
+  $('#checkout-subtotal').text(window.formatPrice(totals.subtotal));
   
   if (totals.discount > 0) {
-    ('#checkout-discount-row').show();
-    ('#checkout-discount').text(`-{totals.discount.toFixed(2)}`);
+    $('#checkout-discount-row').show();
+    $('#checkout-discount').text('-' + window.formatPrice(totals.discount));
   } else {
-    ('#checkout-discount-row').hide();
+    $('#checkout-discount-row').hide();
   }
 
-  ('#checkout-tax').text(`{totals.tax.toFixed(2)}`);
+  $('#checkout-tax').text(window.formatPrice(totals.tax));
   
   if (totals.shipping === 0) {
-    ('#checkout-shipping').html('<span class="text-success">Free</span>');
+    $('#checkout-shipping').html('<span class="text-success">Free</span>');
   } else {
-    ('#checkout-shipping').text(`{totals.shipping.toFixed(2)}`);
+    $('#checkout-shipping').text(window.formatPrice(totals.shipping));
   }
 
-  ('#checkout-grand-total').text(`{totals.grandTotal.toFixed(2)}`);
+  $('#checkout-grand-total').text(window.formatPrice(totals.grandTotal));
 }
 
 function recalculateCheckoutTotals(coupon) {
@@ -244,8 +244,8 @@ function processOrderSubmission() {
   
   // Package order details
   const finalTotals = JSON.parse(localStorage.getItem('aurastyle_totals'));
-  const customerEmail = ('#email').val();
-  const customerName = ('#firstName').val() + ' ' + ('#lastName').val();
+  const customerEmail = $('#email').val();
+  const customerName = $('#firstName').val() + ' ' + $('#lastName').val();
 
   const orderReceipt = {
     orderNumber: orderNum,
