@@ -113,7 +113,7 @@ window.AuraProducts = [
     "rating": 4.6,
     "reviewsCount": 42,
     "images": [
-      "https://images.unsplash.com/photo-1609592424085-f5b2488d902f?w=600&auto=format&fit=crop&q=80"
+      "images/power-bank.png"
     ],
     "specs": {
       "Capacity": "20,000 mAh",
