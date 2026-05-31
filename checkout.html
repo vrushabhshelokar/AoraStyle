@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Secure checkout at AuraStyle. Enter your billing and shipping information and complete your order securely.">
+  <title>Secure Checkout | AuraStyle Storefront</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sticky Glassmorphism Header Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-intersect me-2"></i>AURASTYLE
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navContent">
+        <!-- Links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom active" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="category.html">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Search Bar -->
+        <form class="d-flex search-container me-3 position-relative" role="search" action="search.html" method="GET">
+          <div class="input-group">
+            <input class="form-control nav-search-input border-end-0" type="search" placeholder="Search products..." aria-label="Search" name="q" autocomplete="off" style="width: 220px; border-radius: 8px 0 0 8px;">
+            <button class="btn btn-outline-secondary border-start-0 text-muted" type="submit" style="border-color: #cbd5e1; border-radius: 0 8px 8px 0; background-color: white;">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+
+        <!-- Cart Icon dynamic badge -->
+        <div class="d-flex align-items-center">
+          <a href="cart.html" class="btn btn-outline-dark border-0 rounded-circle cart-badge-container p-2" title="View Cart">
+            <i class="bi bi-bag-heart" style="font-size: 1.35rem;"></i>
+            <span class="cart-badge badge">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Progress Steps bar -->
+  <header class="py-4 bg-light border-bottom">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-8 text-center">
+          <div class="d-flex justify-content-center align-items-center gap-3">
+            <span class="badge bg-secondary opacity-50 px-3 py-2 font-weight-bold">1. Shopping Cart</span>
+            <i class="bi bi-chevron-right text-muted"></i>
+            <span class="badge bg-primary px-3 py-2 font-weight-bold">2. Checkout Billing</span>
+            <i class="bi bi-chevron-right text-muted"></i>
+            <span class="badge bg-secondary opacity-50 px-3 py-2 font-weight-bold">3. Order Complete</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Checkout Grid -->
+  <main class="py-5 bg-white flex-grow-1">
+    <div class="container py-3">
+      
+      <form id="checkout-form" novalidate>
+        <div class="row">
+          
+          <!-- Shipping and Billing fields (Left) -->
+          <div class="col-lg-7 mb-4 mb-lg-0">
+            <!-- Part 1: Shipping Details -->
+            <div class="card border border-slate-subtle rounded shadow-sm p-4 mb-4 bg-white">
+              <h5 class="font-weight-bold mb-4 pb-2 border-bottom text-dark">Shipping Address</h5>
+              
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label font-weight-bold text-dark small" style="font-weight:600;">First Name *</label>
+                  <input type="text" class="form-control" id="firstName" name="firstName" required>
+                </div>
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label font-weight-bold text-dark small" style="font-weight:600;">Last Name *</label>
+                  <input type="text" class="form-control" id="lastName" name="lastName" required>
+                </div>
+                <div class="col-sm-6">
+                  <label for="email" class="form-label font-weight-bold text-dark small" style="font-weight:600;">Email Address *</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="col-sm-6">
+                  <label for="phone" class="form-label font-weight-bold text-dark small" style="font-weight:600;">Phone Number *</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" placeholder="e.g. 9876543210" required>
+                </div>
+                <div class="col-12">
+                  <label for="address" class="form-label font-weight-bold text-dark small" style="font-weight:600;">Delivery Address *</label>
+                  <input type="text" class="form-control" id="address" name="address" placeholder="123 Main St, Apt 4B" required>
+                </div>
+                <div class="col-sm-6">
+                  <label for="city" class="form-label font-weight-bold text-dark small" style="font-weight:600;">City *</label>
+                  <input type="text" class="form-control" id="city" name="city" required>
+                </div>
+                <div class="col-sm-3">
+                  <label for="state" class="form-label font-weight-bold text-dark small" style="font-weight:600;">State *</label>
+                  <select class="form-select" id="state" name="state" required>
+                    <option value="">Select...</option>
+                    <option value="CA">California</option>
+                    <option value="NY">New York</option>
+                    <option value="TX">Texas</option>
+                    <option value="FL">Florida</option>
+                  </select>
+                </div>
+                <div class="col-sm-3">
+                  <label for="zip" class="form-label font-weight-bold text-dark small" style="font-weight:600;">ZIP Code *</label>
+                  <input type="text" class="form-control" id="zip" name="zip" required>
+                </div>
+              </div>
+
+              <!-- Billing Checkbox -->
+              <div class="form-check mt-4">
+                <input class="form-check-input" type="checkbox" id="same-address" name="sameAddress" checked>
+                <label class="form-check-label text-muted small" for="same-address">
+                  Billing address is the same as my shipping address
+                </label>
+              </div>
+            </div>
+
+            <!-- Optional Billing Details Drawer -->
+            <div class="card border border-slate-subtle rounded shadow-sm p-4 mb-4 bg-white" id="billing-fields-wrapper" style="display: none;">
+              <h5 class="font-weight-bold mb-4 pb-2 border-bottom text-dark">Billing Address</h5>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="billFirstName" class="form-label font-weight-bold text-dark small" style="font-weight:600;">First Name</label>
+                  <input type="text" class="form-control" id="billFirstName" name="billFirstName">
+                </div>
+                <div class="col-sm-6">
+                  <label for="billLastName" class="form-label font-weight-bold text-dark small" style="font-weight:600;">Last Name</label>
+                  <input type="text" class="form-control" id="billLastName" name="billLastName">
+                </div>
+                <div class="col-12">
+                  <label for="billAddress" class="form-label font-weight-bold text-dark small" style="font-weight:600;">Billing Address</label>
+                  <input type="text" class="form-control" id="billAddress" name="billAddress">
+                </div>
+                <div class="col-sm-6">
+                  <label for="billCity" class="form-label font-weight-bold text-dark small" style="font-weight:600;">City</label>
+                  <input type="text" class="form-control" id="billCity" name="billCity">
+                </div>
+                <div class="col-sm-6">
+                  <label for="billZip" class="form-label font-weight-bold text-dark small" style="font-weight:600;">ZIP Code</label>
+                  <input type="text" class="form-control" id="billZip" name="billZip">
+                </div>
+              </div>
+            </div>
+
+            <!-- Part 2: Card details -->
+            <div class="card border border-slate-subtle rounded shadow-sm p-4 bg-white">
+              <h5 class="font-weight-bold mb-4 pb-2 border-bottom text-dark">Payment Details</h5>
+              
+              <div class="row g-3">
+                <div class="col-12">
+                  <label for="cardName" class="form-label font-weight-bold text-dark small" style="font-weight:600;">Name on Card *</label>
+                  <input type="text" class="form-control" id="cardName" name="cardName" placeholder="John Doe" required>
+                </div>
+                <div class="col-12">
+                  <label for="cardNumber" class="form-label font-weight-bold text-dark small" style="font-weight:600;">Credit Card Number *</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0 text-muted"><i class="bi bi-credit-card"></i></span>
+                    <input type="text" class="form-control border-start-0" id="cardNumber" name="cardNumber" placeholder="xxxx-xxxx-xxxx-xxxx" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="cardExpiry" class="form-label font-weight-bold text-dark small" style="font-weight:600;">Expiration Date *</label>
+                  <input type="text" class="form-control" id="cardExpiry" name="cardExpiry" placeholder="MM/YY" required>
+                </div>
+                <div class="col-sm-6">
+                  <label for="cardCvv" class="form-label font-weight-bold text-dark small" style="font-weight:600;">CVV Code *</label>
+                  <input type="password" class="form-control" id="cardCvv" name="cardCvv" placeholder="e.g. 123" required>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Summary right pane (Right) -->
+          <div class="col-lg-5">
+            <!-- Cart totals details -->
+            <div class="card border border-slate-subtle rounded shadow-sm p-4 mb-4 bg-white">
+              <h5 class="font-weight-bold mb-4 pb-2 border-bottom text-dark">Order Items</h5>
+              
+              <!-- Cart Items list container -->
+              <div id="checkout-items-summary" class="mb-4">
+                <!-- Dynamically generated in checkout.js -->
+              </div>
+              
+              <div class="border-top pt-3">
+                <div class="d-flex justify-content-between mb-2">
+                  <span class="text-muted small">Subtotal</span>
+                  <span class="font-weight-bold text-dark small" id="checkout-subtotal">0.00</span>
+                </div>
+                
+                <div class="d-flex justify-content-between mb-2 text-success" id="checkout-discount-row" style="display: none;">
+                  <span class="small">Discount Coupon</span>
+                  <span class="font-weight-bold small" id="checkout-discount">-0.00</span>
+                </div>
+
+                <div class="d-flex justify-content-between mb-2">
+                  <span class="text-muted small">Shipping Rate</span>
+                  <span class="font-weight-bold text-dark small" id="checkout-shipping">0.00</span>
+                </div>
+                
+                <div class="d-flex justify-content-between mb-3">
+                  <span class="text-muted small">Estimated Tax</span>
+                  <span class="font-weight-bold text-dark small" id="checkout-tax">0.00</span>
+                </div>
+
+                <div class="d-flex justify-content-between border-top pt-3 mb-4">
+                  <span class="h5 font-weight-bold text-dark mb-0">Grand Total</span>
+                  <span class="h4 font-weight-bold text-primary mb-0" id="checkout-grand-total">0.00</span>
+                </div>
+
+                <button class="btn btn-primary w-100 py-3 font-weight-bold rounded" type="submit">
+                  Confirm and Pay Order
+                </button>
+              </div>
+            </div>
+
+            <!-- Apply Coupon code direct inside checkout -->
+            <div class="card border border-slate-subtle rounded shadow-sm p-4 bg-white">
+              <h6 class="font-weight-bold mb-3 text-dark">Apply Discount Code</h6>
+              <div id="checkout-coupon-form" class="input-group">
+                <input type="text" class="form-control" placeholder="Promo code" id="checkout-coupon-code" style="border-radius: 8px 0 0 8px;">
+                <button class="btn btn-outline-primary px-3" type="button" id="checkout-coupon-btn" style="border-radius: 0 8px 8px 0;">Apply</button>
+              </div>
+              <div class="text-xs text-muted mt-2" style="font-size:0.75rem;">
+                Try coupon code <strong>WELCOME10</strong> (10% Off) or <strong>FREESHIP</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <h5 class="navbar-brand text-white font-weight-bold mb-4">
+            <i class="bi bi-intersect me-2 text-primary"></i>AURASTYLE
+          </h5>
+          <p class="small text-muted mb-4">Premium curated modern lifestyles. Offering high-fidelity audio electronics, designer hand-cut outerwear fashion, organic stoneware kitchen essentials, and clean skincare serums.</p>
+          <div class="d-flex">
+            <a href="#" class="footer-social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="footer-social-icon"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="footer-social-icon"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2 col-6 ms-md-auto">
+          <h6 class="footer-title">Quick Links</h6>
+          <a href="products.html" class="footer-link">Shop Store</a>
+          <a href="category.html" class="footer-link">Shop Categories</a>
+          <a href="about.html" class="footer-link">About Company</a>
+          <a href="contact.html" class="footer-link">Contact Desk</a>
+        </div>
+        <div class="col-md-2 col-6">
+          <h6 class="footer-title">Help & Support</h6>
+          <a href="contact.html" class="footer-link">FAQ Support</a>
+          <a href="#" class="footer-link">Delivery Rates</a>
+          <a href="#" class="footer-link">Claim Refund</a>
+          <a href="#" class="footer-link">Product Guides</a>
+        </div>
+        <div class="col-md-3">
+          <h6 class="footer-title">Contact Office</h6>
+          <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 104 Aura Boulevard, Suite 500, California</p>
+          <p class="small text-muted mb-2"><i class="bi bi-telephone me-2 text-primary"></i> +1 (800) AURA-STYLE</p>
+          <p class="small text-muted mb-2"><i class="bi bi-envelope me-2 text-primary"></i> support@aurastyle.com</p>
+        </div>
+      </div>
+      <div class="row pt-4 border-top border-white border-opacity-10 align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <p class="small text-muted mb-0">&copy; 2026 AuraStyle Storefront. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=300&auto=format&fit=crop&q=80" alt="Secure Payment Cards" class="img-fluid" style="height: 30px; object-fit: contain; filter: grayscale(1) opacity(0.5);">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-top floating button -->
+  <button class="btn-scroll-top" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- jQuery Validate Plugin CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+  <!-- jQuery Validate Additional Methods Plugin CDN (for credit card validation) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Global App JS -->
+  <script src="js/app.js"></script>
+  <!-- Checkout JS logic -->
+  <script src="js/checkout.js"></script>
+  
+  <!-- Fallback hook for checkout apply button -->
+  <script>
+    ('#checkout-coupon-btn').on('click', function() {
+      ('#checkout-coupon-form').submit();
+    });
+  </script>
+</body>
+</html>

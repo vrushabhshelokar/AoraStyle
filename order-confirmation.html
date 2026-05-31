@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thank you for your order at AuraStyle. Your transaction is complete.">
+  <title>Order Confirmed | AuraStyle Storefront</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sticky Glassmorphism Header Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-intersect me-2"></i>AURASTYLE
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navContent">
+        <!-- Links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="category.html">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Search Bar -->
+        <form class="d-flex search-container me-3 position-relative" role="search" action="search.html" method="GET">
+          <div class="input-group">
+            <input class="form-control nav-search-input border-end-0" type="search" placeholder="Search products..." aria-label="Search" name="q" autocomplete="off" style="width: 220px; border-radius: 8px 0 0 8px;">
+            <button class="btn btn-outline-secondary border-start-0 text-muted" type="submit" style="border-color: #cbd5e1; border-radius: 0 8px 8px 0; background-color: white;">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+
+        <!-- Cart Icon dynamic badge -->
+        <div class="d-flex align-items-center">
+          <a href="cart.html" class="btn btn-outline-dark border-0 rounded-circle cart-badge-container p-2" title="View Cart">
+            <i class="bi bi-bag-heart" style="font-size: 1.35rem;"></i>
+            <span class="cart-badge badge">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Success confirmation container -->
+  <main class="py-5 bg-white flex-grow-1 d-flex align-items-center">
+    <div class="container py-3">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 text-center">
+          
+          <!-- Animated success checkmark -->
+          <div class="mb-4 d-inline-flex align-items-center justify-content-center bg-success-subtle text-success rounded-circle" style="width: 90px; height: 90px; border: 4px solid #d1e7dd;">
+            <i class="bi bi-check-lg" style="font-size: 3rem; line-height: 1;"></i>
+          </div>
+
+          <h1 class="font-weight-bold text-dark mb-3">Order Confirmed!</h1>
+          <p class="text-muted leading-relaxed mb-4">Thank you for your purchase. Your payment was processed successfully. A confirmation email with invoice details has been sent to your address.</p>
+          
+          <!-- Receipt Box -->
+          <div class="card border border-slate-subtle shadow-sm p-4 bg-light rounded text-start mb-4" id="receipt-card">
+            <div class="row g-3">
+              <div class="col-6">
+                <span class="text-xs text-muted d-block uppercase tracking-wider" style="font-size: 0.75rem;">Order Number</span>
+                <strong class="text-dark" id="receipt-number">AUR-XXXXXX-XXX</strong>
+              </div>
+              <div class="col-6">
+                <span class="text-xs text-muted d-block uppercase tracking-wider" style="font-size: 0.75rem;">Billing Name</span>
+                <strong class="text-dark" id="receipt-name">John Doe</strong>
+              </div>
+              <div class="col-6">
+                <span class="text-xs text-muted d-block uppercase tracking-wider" style="font-size: 0.75rem;">Invoice Email</span>
+                <strong class="text-dark text-truncate d-block" id="receipt-email">buyer@domain.com</strong>
+              </div>
+              <div class="col-6">
+                <span class="text-xs text-muted d-block uppercase tracking-wider" style="font-size: 0.75rem;">Amount Charged</span>
+                <strong class="text-primary" id="receipt-total">0.00</strong>
+              </div>
+              <div class="col-12 border-top pt-3 mt-3">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-truck text-success fs-5"></i>
+                  <div>
+                    <span class="text-xs text-muted d-block uppercase tracking-wider" style="font-size: 0.7rem;">Estimated Delivery</span>
+                    <strong class="text-dark" id="receipt-delivery">4 Days Later</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Redirects -->
+          <div class="d-flex gap-3 justify-content-center">
+            <a href="products.html" class="btn btn-primary px-4 py-2 font-weight-bold rounded">
+              <i class="bi bi-cart-fill me-2"></i> Continue Shopping
+            </a>
+            <a href="index.html" class="btn btn-outline-secondary px-4 py-2 font-weight-bold rounded">
+              Go to Home
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <h5 class="navbar-brand text-white font-weight-bold mb-4">
+            <i class="bi bi-intersect me-2 text-primary"></i>AURASTYLE
+          </h5>
+          <p class="small text-muted mb-4">Premium curated modern lifestyles. Offering high-fidelity audio electronics, designer hand-cut outerwear fashion, organic stoneware kitchen essentials, and clean skincare serums.</p>
+          <div class="d-flex">
+            <a href="#" class="footer-social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="footer-social-icon"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="footer-social-icon"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2 col-6 ms-md-auto">
+          <h6 class="footer-title">Quick Links</h6>
+          <a href="products.html" class="footer-link">Shop Store</a>
+          <a href="category.html" class="footer-link">Shop Categories</a>
+          <a href="about.html" class="footer-link">About Company</a>
+          <a href="contact.html" class="footer-link">Contact Desk</a>
+        </div>
+        <div class="col-md-2 col-6">
+          <h6 class="footer-title">Help & Support</h6>
+          <a href="contact.html" class="footer-link">FAQ Support</a>
+          <a href="#" class="footer-link">Delivery Rates</a>
+          <a href="#" class="footer-link">Claim Refund</a>
+          <a href="#" class="footer-link">Product Guides</a>
+        </div>
+        <div class="col-md-3">
+          <h6 class="footer-title">Contact Office</h6>
+          <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 104 Aura Boulevard, Suite 500, California</p>
+          <p class="small text-muted mb-2"><i class="bi bi-telephone me-2 text-primary"></i> +1 (800) AURA-STYLE</p>
+          <p class="small text-muted mb-2"><i class="bi bi-envelope me-2 text-primary"></i> support@aurastyle.com</p>
+        </div>
+      </div>
+      <div class="row pt-4 border-top border-white border-opacity-10 align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <p class="small text-muted mb-0">&copy; 2026 AuraStyle Storefront. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=300&auto=format&fit=crop&q=80" alt="Secure Payment Cards" class="img-fluid" style="height: 30px; object-fit: contain; filter: grayscale(1) opacity(0.5);">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-top floating button -->
+  <button class="btn-scroll-top" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Global App JS -->
+  <script src="js/app.js"></script>
+  
+  <!-- Script to load confirmation receipt details -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const order = JSON.parse(localStorage.getItem('aurastyle_last_order'));
+      
+      if (order) {
+        document.getElementById('receipt-number').textContent = order.orderNumber;
+        document.getElementById('receipt-name').textContent = order.name;
+        document.getElementById('receipt-email').textContent = order.email;
+        document.getElementById('receipt-total').textContent = `{order.total.toFixed(2)}`;
+        document.getElementById('receipt-delivery').textContent = order.deliveryDate;
+      }
+    });
+  </script>
+</body>
+</html>

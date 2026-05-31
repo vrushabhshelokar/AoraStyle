@@ -1,0 +1,512 @@
+[
+  {
+    "id": 1,
+    "name": "AeroSync Wireless Headphones",
+    "category": "Electronics",
+    "description": "Experience unparalleled sound quality with the AeroSync Wireless Headphones. Featuring industry-leading active noise cancellation, 40-hour battery life, and ultra-comfortable memory foam earcups. Perfect for audiophiles and daily commuters alike.",
+    "shortDescription": "Active Noise Cancelling headphones with 40h battery life.",
+    "price": 1300,
+    "discountPrice": 1300,
+    "rating": 4.8,
+    "reviewsCount": 128,
+    "images": [
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Type": "Over-Ear",
+      "Connectivity": "Bluetooth 5.2 & Wired",
+      "Battery Life": "Up to 40 Hours",
+      "Charging": "USB-C Fast Charge",
+      "Noise Cancelling": "Hybrid ANC"
+    },
+    "isFeatured": true,
+    "isLatest": false,
+    "isDealOfDay": true,
+    "reviews": [
+      { "user": "Alex M.", "rating": 5, "comment": "Best ANC headphones I've owned! Super comfortable for long flights.", "date": "2026-05-10" },
+      { "user": "Sarah T.", "rating": 4, "comment": "Great sound quality, but the carrying case is a bit bulky.", "date": "2026-05-14" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Chronos Smart Watch",
+    "category": "Electronics",
+    "description": "Stay connected and track your health metrics in style. The Chronos Smart Watch features an always-on AMOLED display, heart rate tracking, sleep monitoring, built-in GPS, and up to 7 days of battery life.",
+    "shortDescription": "AMOLED Smartwatch with GPS and heart-rate tracker.",
+    "price": 2000,
+    "discountPrice": 1300,
+    "rating": 4.5,
+    "reviewsCount": 84,
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Display": "1.43\" AMOLED",
+      "Battery": "Up to 7 Days",
+      "Water Resistance": "5ATM (50 meters)",
+      "Sensors": "Heart Rate, SpO2, Accelerometer, GPS"
+    },
+    "isFeatured": true,
+    "isLatest": true,
+    "isDealOfDay": false,
+    "reviews": [
+      { "user": "James K.", "rating": 5, "comment": "Excellent tracker. The battery really does last a whole week!", "date": "2026-04-28" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Quantum Mechanical Keyboard",
+    "category": "Electronics",
+    "description": "Elevate your typing and gaming experience. Outfitted with hot-swappable linear yellow switches, customizable per-key RGB backlighting, and a premium aluminum case, the Quantum offers unparalleled tactile feedback and durability.",
+    "shortDescription": "Hot-swappable mechanical keyboard with RGB backlighting.",
+    "price": 1000,
+    "discountPrice": 800,
+    "rating": 4.7,
+    "reviewsCount": 56,
+    "images": [
+      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Form Factor": "Tenkeyless (80%)",
+      "Switches": "Linear Yellow (Hot-Swappable)",
+      "Backlight": "Per-Key RGB",
+      "Keycaps": "Double-shot PBT"
+    },
+    "isFeatured": false,
+    "isLatest": true,
+    "isDealOfDay": false,
+    "reviews": [
+      { "user": "Emily R.", "rating": 5, "comment": "Sounds amazing right out of the box. Highly recommended.", "date": "2026-05-02" }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "OmniCharge 20K Power Bank",
+    "category": "Electronics",
+    "description": "Never run out of power. The OmniCharge features 20,000mAh capacity, Power Delivery 65W fast charging, dual USB-C ports, and an integrated status LED display to monitor charging speed and remaining capacity.",
+    "shortDescription": "20,000mAh Power Delivery 65W power bank.",
+    "price": 550,
+    "discountPrice": null,
+    "rating": 4.6,
+    "reviewsCount": 42,
+    "images": [
+      "https://images.unsplash.com/photo-1609592424085-f5b2488d902f?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Capacity": "20,000 mAh",
+      "Max Output": "65W USB-C PD",
+      "Ports": "2x USB-C, 1x USB-A",
+      "Weight": "380g"
+    },
+    "isFeatured": false,
+    "isLatest": false,
+    "isDealOfDay": false,
+    "reviews": []
+  },
+  {
+    "id": 5,
+    "name": "Classic Leather Rider Jacket",
+    "category": "Fashion",
+    "description": "A timeless classic. Handcrafted from premium full-grain lambskin leather, this jacket features high-quality YKK metal zippers, a comfortable satin lining, and multiple pockets. It fits closely and patinas beautifully over time.",
+    "shortDescription": "Premium lambskin leather jacket with YKK zippers.",
+    "price": 2300,
+    "discountPrice": 2000,
+    "rating": 4.9,
+    "reviewsCount": 210,
+    "images": [
+      "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Material": "100% Full-grain Lambskin Leather",
+      "Lining": "Satin",
+      "Zippers": "YKK Metal Zippers",
+      "Fit": "Slim Rider Fit"
+    },
+    "isFeatured": true,
+    "isLatest": false,
+    "isDealOfDay": false,
+    "reviews": [
+      { "user": "Michael D.", "rating": 5, "comment": "Absolutely premium quality leather. Smells great, fits perfectly.", "date": "2026-05-12" }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Signature Denim Jeans",
+    "category": "Fashion",
+    "description": "Crafted from 12oz raw Japanese selvedge denim. These slim-straight jeans offer a classic silhouette, reinforced button fly, and copper rivets. They will break in and fade uniquely based on your lifestyle.",
+    "shortDescription": "Japanese selvedge raw denim slim-straight jeans.",
+    "price": 500,
+    "discountPrice": 300,
+    "rating": 4.4,
+    "reviewsCount": 98,
+    "images": [
+      "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Material": "100% Selvedge Cotton Denim",
+      "Weight": "12 oz",
+      "Fly": "Button Fly",
+      "Fit": "Slim Straight"
+    },
+    "isFeatured": false,
+    "isLatest": false,
+    "isDealOfDay": false,
+    "reviews": []
+  },
+  {
+    "id": 7,
+    "name": "Urban Pulse Runner Sneakers",
+    "category": "Fashion",
+    "description": "Engineered for maximum speed and comfort. These sneakers feature a breathable mesh upper, a responsive foam midsole that delivers high energy return, and a durable rubber outsole for superior grip on roads and tracks.",
+    "shortDescription": "Lightweight breathable running shoes.",
+    "price": 700,
+    "discountPrice": 400,
+    "rating": 4.6,
+    "reviewsCount": 112,
+    "images": [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Upper": "Engineered Knit Mesh",
+      "Midsole": "High-rebound EVA Foam",
+      "Weight": "240g (Size 9)",
+      "Drop": "8 mm"
+    },
+    "isFeatured": true,
+    "isLatest": true,
+    "isDealOfDay": false,
+    "reviews": [
+      { "user": "Kevin S.", "rating": 4, "comment": "Super light and bounce is great. Runs a half-size small.", "date": "2026-05-18" }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Minimalist Canvas Backpack",
+    "category": "Fashion",
+    "description": "The perfect everyday companion. Made from water-resistant waxed canvas with genuine leather trim. It features a padded 15.6\" laptop compartment, two quick-access side pockets, and padded adjustable shoulder straps.",
+    "shortDescription": "Water-resistant waxed canvas backpack with laptop sleeve.",
+    "price": 450,
+    "discountPrice": null,
+    "rating": 4.7,
+    "reviewsCount": 75,
+    "images": [
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Material": "Waxed Canvas & Crazy Horse Leather",
+      "Capacity": "22 Liters",
+      "Laptop Slot": "Up to 15.6 Inch",
+      "Waterproof": "Water-Resistant"
+    },
+    "isFeatured": false,
+    "isLatest": true,
+    "isDealOfDay": false,
+    "reviews": []
+  },
+  {
+    "id": 9,
+    "name": "Barista Touch Espresso Machine",
+    "category": "Home & Living",
+    "description": "Bring the specialty cafe experience home. This espresso machine features a high-pressure 15-bar Italian pump, a precise digital PID temperature controller, a built-in conical burr grinder with 30 settings, and a microfoam steam wand.",
+    "shortDescription": "Semi-automatic espresso machine with grinder and PID.",
+    "price": 5300,
+    "discountPrice": 4300,
+    "rating": 4.8,
+    "reviewsCount": 64,
+    "images": [
+      "https://images.unsplash.com/photo-1517256064527-09c53b2d0bc6?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Pressure": "15 Bar Italian Pump",
+      "Water Tank": "2.0 Liters (Removable)",
+      "Grinder": "Integrated Conical Burr (30 settings)",
+      "Heating": "Thermo-coil System"
+    },
+    "isFeatured": true,
+    "isLatest": false,
+    "isDealOfDay": false,
+    "reviews": [
+      { "user": "Clara O.", "rating": 5, "comment": "Pulls amazing shots. The microfoam quality is outstanding.", "date": "2026-05-15" }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Artisanal Ceramic Mug Set",
+    "category": "Home & Living",
+    "description": "Enjoy your morning brew in style. This set includes four hand-thrown ceramic mugs with a unique reactive glaze finish. Microwave and dishwasher safe, these sturdy mugs fit comfortably in your hands and bring organic warmth to your table.",
+    "shortDescription": "Set of 4 hand-glazed stoneware mugs.",
+    "price": 34.99,
+    "discountPrice": 29.99,
+    "rating": 4.5,
+    "reviewsCount": 49,
+    "images": [
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1577937927133-66ef06acdf18?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Count": "Set of 4 Mugs",
+      "Material": "Stoneware Ceramic",
+      "Capacity": "12 oz (350ml)",
+      "Safety": "Microwave & Dishwasher Safe"
+    },
+    "isFeatured": false,
+    "isLatest": false,
+    "isDealOfDay": false,
+    "reviews": []
+  },
+  {
+    "id": 11,
+    "name": "Smart LED Arc Desk Lamp",
+    "category": "Home & Living",
+    "description": "Modern lighting for your modern workspace. This sleek, minimalist LED arc lamp features touch controls, adjustable color temperature (3000K-6000K), multiple brightness levels, and a built-in wireless Qi charging pad in the base.",
+    "shortDescription": "Minimalist desk lamp with wireless charger.",
+    "price": 400,
+    "discountPrice": null,
+    "rating": 4.6,
+    "reviewsCount": 51,
+    "images": [
+      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Light Source": "LED (Dimmable)",
+      "Color Temp": "3000K - 6000K (5 modes)",
+      "Wireless Charger": "Qi 10W Fast Charging",
+      "Material": "Anodized Aluminum"
+    },
+    "isFeatured": false,
+    "isLatest": true,
+    "isDealOfDay": false,
+    "reviews": []
+  },
+  {
+    "id": 12,
+    "name": "ComfortSleep Weighted Blanket",
+    "category": "Home & Living",
+    "description": "Drift off into a deeper sleep. The ComfortSleep weighted blanket uses premium micro-glass beads distributed evenly in 4\" square pockets. Covered in a cooling bamboo-derived rayon fabric, it mimics deep pressure therapy to relieve stress.",
+    "shortDescription": "15 lbs cooling bamboo weighted blanket.",
+    "price": 800,
+    "discountPrice": 700,
+    "rating": 4.7,
+    "reviewsCount": 93,
+    "images": [
+      "https://images.unsplash.com/photo-1580301762395-21ce84d00bc6?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Weight": "15 lbs (6.8 kg)",
+      "Dimensions": "60\" x 80\" (Queen Size)",
+      "Cover Material": "100% Bamboo Rayon",
+      "Filling": "Hypoallergenic Micro-Glass Beads"
+    },
+    "isFeatured": true,
+    "isLatest": false,
+    "isDealOfDay": false,
+    "reviews": [
+      { "user": "Thomas W.", "rating": 5, "comment": "Changed my sleep completely. Doesn't get hot at all.", "date": "2026-05-11" }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "GlowSkin Vitamin C Serum",
+    "category": "Beauty",
+    "description": "Brighten and firm your complexion. Our GlowSkin Serum combines 15% Pure L-Ascorbic Acid (Vitamin C), Ferulic Acid, and Hyaluronic Acid to defend against environmental stressors, fade dark spots, and plump skin for a youthful glow.",
+    "shortDescription": "15% Vitamin C serum with Hyaluronic Acid.",
+    "price": 45.00,
+    "discountPrice": 36.00,
+    "rating": 4.6,
+    "reviewsCount": 142,
+    "images": [
+      "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Volume": "1.0 fl. oz. / 30ml",
+      "Key Ingredients": "L-Ascorbic Acid (15%), Ferulic Acid, Vitamin E",
+      "Skin Type": "Suitable for All Skin Types",
+      "Fragrance": "Fragrance-Free"
+    },
+    "isFeatured": true,
+    "isLatest": false,
+    "isDealOfDay": false,
+    "reviews": [
+      { "user": "Linda P.", "rating": 5, "comment": "My dark spots have visibly faded in just 3 weeks! Loving the results.", "date": "2026-05-09" }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Velvet Matte Lipstick Set",
+    "category": "Beauty",
+    "description": "Nail your lip look. This premium collection includes 5 long-wear, transfer-proof matte lipsticks ranging from classic nude to bold crimson red. Enriched with Vitamin E and Avocado Oil to keep lips hydrated all day.",
+    "shortDescription": "Set of 5 long-wear matte lipsticks.",
+    "price": 49.99,
+    "discountPrice": 39.99,
+    "rating": 4.4,
+    "reviewsCount": 67,
+    "images": [
+      "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Finish": "Velvet Matte",
+      "Shades Count": "5 Shades",
+      "Features": "Smudge-proof, Hydrating",
+      "Cruelty-Free": "Yes"
+    },
+    "isFeatured": false,
+    "isLatest": true,
+    "isDealOfDay": false,
+    "reviews": []
+  },
+  {
+    "id": 15,
+    "name": "Serene Woods Scented Candle",
+    "category": "Beauty",
+    "description": "Bring the soothing essence of nature indoors. Hand-poured with natural soy wax, featuring notes of sandalwood, amber, and fresh cedarwood. Uses a clean-burning crackling wooden wick for added cozy ambiance. Burns for 50 hours.",
+    "shortDescription": "Premium soy wax candle with wood wick.",
+    "price": 24.99,
+    "discountPrice": 19.99,
+    "rating": 4.8,
+    "reviewsCount": 81,
+    "images": [
+      "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Wax Type": "100% Natural Soy Wax",
+      "Scent Profile": "Sandalwood, Cedarwood, Amber",
+      "Wick": "Eco-friendly Wood Wick",
+      "Burn Time": "Approx. 50 Hours"
+    },
+    "isFeatured": false,
+    "isLatest": false,
+    "isDealOfDay": false,
+    "reviews": [
+      { "user": "Mark R.", "rating": 5, "comment": "The crackling sound is so calming, and the scent is warm but not overpowering.", "date": "2026-05-19" }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "HydraDew Intensive Face Cream",
+    "category": "Beauty",
+    "description": "Lock in hydration for 72 hours. HydraDew is enriched with ceramides, squalane, and colloidal oatmeal to repair the moisture barrier, soothe redness, and provide deep nourishment to dry or irritated skin.",
+    "shortDescription": "Barrier-repairing daily face cream.",
+    "price": 38.00,
+    "discountPrice": null,
+    "rating": 4.7,
+    "reviewsCount": 115,
+    "images": [
+      "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Volume": "1.7 fl. oz. / 50ml",
+      "Key Ingredients": "Ceramides, Squalane, Colloidal Oatmeal",
+      "Paraben-Free": "Yes",
+      "Dermatologist Tested": "Yes"
+    },
+    "isFeatured": false,
+    "isLatest": true,
+    "isDealOfDay": false,
+    "reviews": []
+  },
+  {
+    "id": 17,
+    "name": "ProSound 2.1 Soundbar System",
+    "category": "Electronics",
+    "description": "Transform your TV room into a home theater. The ProSound 2.1 features a wireless active subwoofer, Bluetooth audio streaming, multiple EQ presets, HDMI ARC input, and clear voice technology for crystal clear dialogue.",
+    "shortDescription": "2.1 Channel soundbar with wireless subwoofer.",
+    "price": 1300,
+    "discountPrice": 1000,
+    "rating": 4.5,
+    "reviewsCount": 38,
+    "images": [
+      "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Output": "120W Total Power",
+      "Channels": "2.1 Stereo + Sub",
+      "Inputs": "HDMI ARC, Optical, Aux, Bluetooth",
+      "Subwoofer": "6.5\" Wireless Driver"
+    },
+    "isFeatured": false,
+    "isLatest": false,
+    "isDealOfDay": false,
+    "reviews": []
+  },
+  {
+    "id": 18,
+    "name": "Cozy Knit Cardigan Sweater",
+    "category": "Fashion",
+    "description": "Wrap yourself in luxury. Knit from an incredibly soft merino wool blend, this loose-fit open front cardigan features ribbed cuffs, patch pockets, and a mid-length drape. Perfect for layering in chilly weather.",
+    "shortDescription": "Merino wool blend open-front cardigan.",
+    "price": 750,
+    "discountPrice": 550,
+    "rating": 4.6,
+    "reviewsCount": 53,
+    "images": [
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Material": "50% Merino Wool, 30% Nylon, 20% Acrylic",
+      "Pockets": "2 Front Patch Pockets",
+      "Fit": "Oversized / Loose Fit",
+      "Care": "Hand Wash Cold / Dry Flat"
+    },
+    "isFeatured": false,
+    "isLatest": false,
+    "isDealOfDay": false,
+    "reviews": []
+  },
+  {
+    "id": 19,
+    "name": "Bamboo Fiber Storage Organizer",
+    "category": "Home & Living",
+    "description": "Declutter your drawers and shelves with sustainable style. This modular organizer set includes 5 boxes of varying sizes made from renewable organic bamboo, perfect for organizing office supplies, kitchen gadgets, or bathroom essentials.",
+    "shortDescription": "5-piece modular bamboo drawer organizers.",
+    "price": 29.99,
+    "discountPrice": null,
+    "rating": 4.3,
+    "reviewsCount": 29,
+    "images": [
+      "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Count": "5-Piece Modular Set",
+      "Material": "100% Organic Moso Bamboo",
+      "Finish": "Water-Resistant Sealant",
+      "Sizes": "Varying from 3\"x3\" to 12\"x6\""
+    },
+    "isFeatured": false,
+    "isLatest": false,
+    "isDealOfDay": false,
+    "reviews": []
+  },
+  {
+    "id": 20,
+    "name": "Mineral Mud Purifying Mask",
+    "category": "Beauty",
+    "description": "Deep clean and detoxify your pores. Formulated with mineral-rich Dead Sea mud, bentonite clay, organic aloe vera, and jojoba oil. It extracts impurities, absorbs excess oils, and gently exfoliates to reveal a smoother, fresher complexion.",
+    "shortDescription": "Dead Sea mineral mud detoxifying face mask.",
+    "price": 22.00,
+    "discountPrice": 17.50,
+    "rating": 4.7,
+    "reviewsCount": 73,
+    "images": [
+      "https://images.unsplash.com/photo-1567894340315-735d7c361db0?w=600&auto=format&fit=crop&q=80"
+    ],
+    "specs": {
+      "Volume": "4.0 oz / 120g",
+      "Active Base": "Dead Sea Mineral Mud & Bentonite",
+      "Additives": "Aloe Vera, Jojoba Oil, Shea Butter",
+      "Cruelty-Free": "Yes"
+    },
+    "isFeatured": false,
+    "isLatest": false,
+    "isDealOfDay": false,
+    "reviews": []
+  }
+]

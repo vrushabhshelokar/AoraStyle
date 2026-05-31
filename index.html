@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AuraStyle - Elevate your lifestyle with our premium, modern e-commerce storefront. Shop fashion, electronics, home decor, and beauty.">
+  <title>AuraStyle | Premium Modern E-Commerce Storefront</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sticky Glassmorphism Header Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-intersect me-2"></i>AURASTYLE
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navContent">
+        <!-- Links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="category.html">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Search Bar with Suggestions Autocomplete -->
+        <form class="d-flex search-container me-3 position-relative" role="search" action="search.html" method="GET">
+          <div class="input-group">
+            <input class="form-control nav-search-input border-end-0" type="search" placeholder="Search products..." aria-label="Search" name="q" autocomplete="off" style="width: 220px; border-radius: 8px 0 0 8px;">
+            <button class="btn btn-outline-secondary border-start-0 text-muted" type="submit" style="border-color: #cbd5e1; border-radius: 0 8px 8px 0; background-color: white;">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+
+        <!-- Cart Icon dynamic badge -->
+        <div class="d-flex align-items-center">
+          <a href="cart.html" class="btn btn-outline-dark border-0 rounded-circle cart-badge-container p-2" title="View Cart">
+            <i class="bi bi-bag-heart" style="font-size: 1.35rem;"></i>
+            <span class="cart-badge badge">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Carousel Slider -->
+  <header id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&auto=format&fit=crop&q=80');">
+        <div class="hero-overlay">
+          <div class="container text-white">
+            <div class="col-lg-7">
+              <span class="badge bg-danger mb-3 px-3 py-2 text-uppercase tracking-wider font-weight-bold" style="font-size:0.8rem;">Summer Collection</span>
+              <h1 class="hero-title mb-3">Define Your Signature Style</h1>
+              <p class="lead mb-4 opacity-75">Discover curated designer pieces that bring elegance and sophistication to your summer wardrobe. Save up to 40% on essentials.</p>
+              <a href="products.html?category=Fashion" class="btn btn-primary btn-lg px-4 py-3 rounded font-weight-bold">Shop Apparel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1600&auto=format&fit=crop&q=80');">
+        <div class="hero-overlay">
+          <div class="container text-white">
+            <div class="col-lg-7">
+              <span class="badge bg-primary mb-3 px-3 py-2 text-uppercase tracking-wider font-weight-bold" style="font-size:0.8rem;">Next-Gen Tech</span>
+              <h1 class="hero-title mb-3">Smart Gear For Modern Living</h1>
+              <p class="lead mb-4 opacity-75">Upgrade your personal audio, tracking systems, and desk setups with premium, high-fidelity wireless components.</p>
+              <a href="products.html?category=Electronics" class="btn btn-primary btn-lg px-4 py-3 rounded font-weight-bold">Explore Electronics</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=1600&auto=format&fit=crop&q=80');">
+        <div class="hero-overlay">
+          <div class="container text-white">
+            <div class="col-lg-7">
+              <span class="badge bg-warning text-dark mb-3 px-3 py-2 text-uppercase tracking-wider font-weight-bold" style="font-size:0.8rem;">Cozy Spaces</span>
+              <h1 class="hero-title mb-3">Elevate Your Living Spaces</h1>
+              <p class="lead mb-4 opacity-75">Handcrafted stoneware, ceramic accents, and smart warm lighting designed to bring organic comfort and zen aesthetics to your home.</p>
+              <a href="products.html?category=Home+%26+Living" class="btn btn-primary btn-lg px-4 py-3 rounded font-weight-bold">Browse Decor</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </header>
+
+  <!-- Shop by Category Section -->
+  <section class="py-5 bg-white">
+    <div class="container py-3">
+      <div class="text-center mb-5">
+        <span class="text-xs text-primary uppercase font-weight-bold tracking-widest" style="font-size: 0.75rem; letter-spacing: 2px;">CURATED DIRECTORY</span>
+        <h2 class="h1 mt-2">Shop by Category</h2>
+        <div class="mx-auto bg-primary mt-3" style="width: 60px; height: 3px;"></div>
+      </div>
+      <div class="row g-4">
+        <!-- Cat 1 -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop&q=80" alt="Electronics">
+            <div class="category-card-overlay">
+              <h4 class="category-card-title">Electronics</h4>
+              <p class="category-card-desc">Headphones, smart watches, chargers, and tech essentials.</p>
+              <a href="products.html?category=Electronics" class="btn btn-sm btn-light font-weight-bold rounded px-3 align-self-start">Explore Catalog</a>
+            </div>
+          </div>
+        </div>
+        <!-- Cat 2 -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&auto=format&fit=crop&q=80" alt="Fashion">
+            <div class="category-card-overlay">
+              <h4 class="category-card-title">Fashion</h4>
+              <p class="category-card-desc">Designer leather, selvedge denim, active footwear, knitwear.</p>
+              <a href="products.html?category=Fashion" class="btn btn-sm btn-light font-weight-bold rounded px-3 align-self-start">Explore Catalog</a>
+            </div>
+          </div>
+        </div>
+        <!-- Cat 3 -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1517256064527-09c53b2d0bc6?w=500&auto=format&fit=crop&q=80" alt="Home Decor">
+            <div class="category-card-overlay">
+              <h4 class="category-card-title">Home & Living</h4>
+              <p class="category-card-desc">Barista makers, stoneware mugs, smart lighting, blankets.</p>
+              <a href="products.html?category=Home+%26+Living" class="btn btn-sm btn-light font-weight-bold rounded px-3 align-self-start">Explore Catalog</a>
+            </div>
+          </div>
+        </div>
+        <!-- Cat 4 -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=500&auto=format&fit=crop&q=80" alt="Beauty">
+            <div class="category-card-overlay">
+              <h4 class="category-card-title">Beauty</h4>
+              <p class="category-card-desc">Vitamin-C serums, mud masks, lipsticks, and soy candles.</p>
+              <a href="products.html?category=Beauty" class="btn btn-sm btn-light font-weight-bold rounded px-3 align-self-start">Explore Catalog</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deal of the Day Banner -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="deal-banner p-4 p-md-5">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <span class="badge bg-secondary mb-3 py-2 px-3 text-uppercase font-weight-bold tracking-wider" style="font-size:0.75rem;">Limited Time Deal</span>
+            <h2 class="h1 text-white font-weight-bold mb-3">AeroSync Noise Cancelling Headphones</h2>
+            <p class="opacity-75 mb-4">Grab our deal of the day at an unparalleled discount. 40 hours battery life, hybrid active noise cancellation, and premium leather comforts.</p>
+            
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <span class="h2 text-secondary font-weight-bold mb-0">1,299</span>
+              <del class="text-white opacity-50">1,499</del>
+              <span class="badge bg-danger">13% OFF</span>
+            </div>
+
+            <!-- Countdown -->
+            <div class="countdown-box" id="deal-countdown">
+              <div class="countdown-unit">
+                <span class="countdown-number" id="timer-hours">08</span>
+                <span class="countdown-label">Hours</span>
+              </div>
+              <div class="countdown-unit">
+                <span class="countdown-number" id="timer-mins">42</span>
+                <span class="countdown-label">Mins</span>
+              </div>
+              <div class="countdown-unit">
+                <span class="countdown-number" id="timer-secs">15</span>
+                <span class="countdown-label">Secs</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80" alt="Headphones Deal" class="img-fluid rounded border border-white border-opacity-10 shadow-lg" style="max-height: 380px; object-fit: cover;">
+            <div class="mt-4">
+              <a href="product-view.html?id=1" class="btn btn-secondary btn-lg px-4 rounded font-weight-bold">View Deal Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Products Grid -->
+  <section class="py-5 bg-white">
+    <div class="container py-3">
+      <div class="d-flex justify-content-between align-items-end mb-5">
+        <div>
+          <span class="text-xs text-primary uppercase font-weight-bold tracking-widest" style="font-size: 0.75rem; letter-spacing: 2px;">RECENT ARRIVALS</span>
+          <h2 class="h1 mt-2 mb-0">Latest Products</h2>
+        </div>
+        <a href="products.html" class="btn btn-outline-primary rounded font-weight-bold px-4 py-2">See All Products <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+      
+      <!-- Loaded dynamically via js -->
+      <div class="row g-4" id="latest-products-grid">
+        <!-- Skeletons Loader items -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card border border-light shadow-sm" style="min-height: 380px;">
+            <div class="skeleton w-100" style="height: 240px;"></div>
+            <div class="card-body">
+              <div class="skeleton w-25 mb-2" style="height: 12px;"></div>
+              <div class="skeleton w-75 mb-2" style="height: 18px;"></div>
+              <div class="skeleton w-50" style="height: 15px;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card border border-light shadow-sm" style="min-height: 380px;">
+            <div class="skeleton w-100" style="height: 240px;"></div>
+            <div class="card-body">
+              <div class="skeleton w-25 mb-2" style="height: 12px;"></div>
+              <div class="skeleton w-75 mb-2" style="height: 18px;"></div>
+              <div class="skeleton w-50" style="height: 15px;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card border border-light shadow-sm" style="min-height: 380px;">
+            <div class="skeleton w-100" style="height: 240px;"></div>
+            <div class="card-body">
+              <div class="skeleton w-25 mb-2" style="height: 12px;"></div>
+              <div class="skeleton w-75 mb-2" style="height: 18px;"></div>
+              <div class="skeleton w-50" style="height: 15px;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card border border-light shadow-sm" style="min-height: 380px;">
+            <div class="skeleton w-100" style="height: 240px;"></div>
+            <div class="card-body">
+              <div class="skeleton w-25 mb-2" style="height: 12px;"></div>
+              <div class="skeleton w-75 mb-2" style="height: 18px;"></div>
+              <div class="skeleton w-50" style="height: 15px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-5 bg-light border-top border-bottom border-slate-subtle">
+    <div class="container py-3">
+      <div class="row g-4">
+        <!-- Feature 1 -->
+        <div class="col-md-4">
+          <div class="feature-box">
+            <div class="feature-icon-wrapper">
+              <i class="bi bi-truck"></i>
+            </div>
+            <h5 class="font-weight-bold mb-3">Free Express Delivery</h5>
+            <p class="text-muted small mb-0">Free shipping on all items order value over 150. Expedited reliable shipping partner delivery direct to your doors.</p>
+          </div>
+        </div>
+        <!-- Feature 2 -->
+        <div class="col-md-4">
+          <div class="feature-box">
+            <div class="feature-icon-wrapper">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h5 class="font-weight-bold mb-3">Secure Transactions</h5>
+            <p class="text-muted small mb-0">Safe payment processing systems with advanced SSL cryptography. All major cards accepted securely.</p>
+          </div>
+        </div>
+        <!-- Feature 3 -->
+        <div class="col-md-4">
+          <div class="feature-box">
+            <div class="feature-icon-wrapper">
+              <i class="bi bi-arrow-counterclockwise"></i>
+            </div>
+            <h5 class="font-weight-bold mb-3">30-Day Free Returns</h5>
+            <p class="text-muted small mb-0">Not satisfied with your product? Easily claim a full refund or exchange product within 30 days hassle-free.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Carousel -->
+  <section class="py-5 bg-white">
+    <div class="container py-3">
+      <div class="text-center mb-5">
+        <span class="text-xs text-primary uppercase font-weight-bold tracking-widest" style="font-size: 0.75rem; letter-spacing: 2px;">CUSTOMER FEEDBACK</span>
+        <h2 class="h1 mt-2">What Our Clients Say</h2>
+        <div class="mx-auto bg-primary mt-3" style="width: 60px; height: 3px;"></div>
+      </div>
+      
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner text-center col-lg-8 mx-auto">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="mb-4 text-warning">
+              <i class="bi bi-star-fill h5"></i>
+              <i class="bi bi-star-fill h5"></i>
+              <i class="bi bi-star-fill h5"></i>
+              <i class="bi bi-star-fill h5"></i>
+              <i class="bi bi-star-fill h5"></i>
+            </div>
+            <blockquote class="blockquote">
+              <p class="h5 mb-4 text-dark font-italic">"The customer service team answered all my questions regarding compatibility. Shipping took only 3 days and headphones sound incredible!"</p>
+            </blockquote>
+            <figcaption class="blockquote-footer mt-2">
+              Amanda C. <cite title="Verified Buyer">Verified Buyer</cite>
+            </figcaption>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="mb-4 text-warning">
+              <i class="bi bi-star-fill h5"></i>
+              <i class="bi bi-star-fill h5"></i>
+              <i class="bi bi-star-fill h5"></i>
+              <i class="bi bi-star-fill h5"></i>
+              <i class="bi bi-star-fill h5"></i>
+            </div>
+            <blockquote class="blockquote">
+              <p class="h5 mb-4 text-dark font-italic">"Excellent craftsmanship on the Leather Jacket. The lambskin feels extremely soft and YKK zippers glide smoothly. AuraStyle is my new favorite fashion shop."</p>
+            </blockquote>
+            <figcaption class="blockquote-footer mt-2">
+              Robert K. <cite title="Verified Buyer">Verified Buyer</cite>
+            </figcaption>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true" style="width: 2.5rem; height: 2.5rem;"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true" style="width: 2.5rem; height: 2.5rem;"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Subscription -->
+  <section class="py-5 text-white" style="background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);">
+    <div class="container py-3">
+      <div class="row align-items-center justify-content-center text-center text-lg-start">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h3 class="font-weight-bold mb-2">Join Our Newsletter</h3>
+          <p class="opacity-75 mb-0">Subscribe now to receive exclusive discounts, flash sale announcements, and fashion styling tips directly to your inbox.</p>
+        </div>
+        <div class="col-lg-5">
+          <form id="newsletter-form" class="d-flex gap-2">
+            <input type="email" class="form-control py-3" placeholder="Enter your email address" required style="border-radius: 8px;">
+            <button class="btn btn-secondary px-4 py-3 rounded font-weight-bold" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <h5 class="navbar-brand text-white font-weight-bold mb-4">
+            <i class="bi bi-intersect me-2 text-primary"></i>AURASTYLE
+          </h5>
+          <p class="small text-muted mb-4">Premium curated modern lifestyles. Offering high-fidelity audio electronics, designer hand-cut outerwear fashion, organic stoneware kitchen essentials, and clean skincare serums.</p>
+          <div class="d-flex">
+            <a href="#" class="footer-social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="footer-social-icon"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="footer-social-icon"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2 col-6 ms-md-auto">
+          <h6 class="footer-title">Quick Links</h6>
+          <a href="products.html" class="footer-link">Shop Store</a>
+          <a href="category.html" class="footer-link">Shop Categories</a>
+          <a href="about.html" class="footer-link">About Company</a>
+          <a href="contact.html" class="footer-link">Contact Desk</a>
+        </div>
+        <div class="col-md-2 col-6">
+          <h6 class="footer-title">Help & Support</h6>
+          <a href="contact.html" class="footer-link">FAQ Support</a>
+          <a href="#" class="footer-link">Delivery Rates</a>
+          <a href="#" class="footer-link">Claim Refund</a>
+          <a href="#" class="footer-link">Product Guides</a>
+        </div>
+        <div class="col-md-3">
+          <h6 class="footer-title">Contact Office</h6>
+          <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 104 Aura Boulevard, Suite 500, California</p>
+          <p class="small text-muted mb-2"><i class="bi bi-telephone me-2 text-primary"></i> +1 (800) AURA-STYLE</p>
+          <p class="small text-muted mb-2"><i class="bi bi-envelope me-2 text-primary"></i> support@aurastyle.com</p>
+        </div>
+      </div>
+      <div class="row pt-4 border-top border-white border-opacity-10 align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <p class="small text-muted mb-0">&copy; 2026 AuraStyle Storefront. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=300&auto=format&fit=crop&q=80" alt="Secure Payment Cards" class="img-fluid" style="height: 30px; object-fit: contain; filter: grayscale(1) opacity(0.5);">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-top floating button -->
+  <button class="btn-scroll-top" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Quick View Modal container placeholder (dynamic injected via products.js) -->
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Global App JS -->
+  <script src="js/app.js"></script>
+  <!-- Products Catalog JS -->
+  <script src="js/products.js"></script>
+
+  <!-- Script to load Home Page specific components -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Fetch products list and extract latest products
+      fetch('data/products.json')
+        .then(res => res.json())
+        .then(products => {
+          const grid = document.getElementById('latest-products-grid');
+          if (grid) {
+            // Find latest products
+            const latest = products.filter(p => p.isLatest).slice(0, 4);
+            
+            grid.innerHTML = latest.map(p => {
+              const priceHTML = p.discountPrice 
+                ? `<span class="product-price">{p.discountPrice.toFixed(2)}</span> <span class="product-price-old">{p.price.toFixed(2)}</span>`
+                : `<span class="product-price">{p.price.toFixed(2)}</span>`;
+
+              const ratingStars = getStarRatingHTML(p.rating);
+
+              return `
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                  <div class="product-card">
+                    <span class="product-badge product-badge-new">New</span>
+                    <div class="product-img-wrapper">
+                      <img src="{p.images[0]}" alt="{p.name}" loading="lazy">
+                      <div class="product-actions">
+                        <button onclick="openQuickView({p.id})" class="btn btn-sm btn-light border shadow-sm">
+                          <i class="bi bi-eye"></i> Quick View
+                        </button>
+                        <button onclick="AuraState.addToCart({p.id})" class="btn btn-sm btn-primary shadow-sm">
+                          <i class="bi bi-cart-plus"></i> Add
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-body">
+                      <span class="product-category">{p.category}</span>
+                      <a href="product-view.html?id={p.id}"><h5 class="product-title-text">{p.name}</h5></a>
+                      <div class="product-rating">
+                        {ratingStars}
+                        <span class="product-rating-count">({p.reviewsCount})</span>
+                      </div>
+                      <div class="product-price-wrapper">
+                        {priceHTML}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              `;
+            }).join('');
+          }
+        });
+
+      // 2. Setup Deal of the Day Countdown Timer (Runs 8 hours ahead of now dynamically)
+      let targetTime = Date.now() + (8 * 60 * 60 * 1000) + (42 * 60 * 1000);
+      
+      function updateTimer() {
+        const diff = targetTime - Date.now();
+        if (diff <= 0) {
+          document.getElementById('deal-countdown').innerHTML = `<span class="text-danger h5 font-weight-bold uppercase">Deal Expired</span>`;
+          return;
+        }
+
+        const hrs = Math.floor(diff / (60 * 60 * 1000));
+        const mins = Math.floor((diff % (60 * 60 * 1000)) / (60 * 1000));
+        const secs = Math.floor((diff % (60 * 1000)) / 1000);
+
+        document.getElementById('timer-hours').textContent = hrs.toString().padStart(2, '0');
+        document.getElementById('timer-mins').textContent = mins.toString().padStart(2, '0');
+        document.getElementById('timer-secs').textContent = secs.toString().padStart(2, '0');
+      }
+      
+      setInterval(updateTimer, 1000);
+      updateTimer();
+
+      // 3. Bind Newsletter form submit
+      const nlForm = document.getElementById('newsletter-form');
+      if (nlForm) {
+        nlForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          AuraState.showToast("Thank you! You are now subscribed to our newsletter.", "success");
+          nlForm.reset();
+        });
+      }
+    });
+
+    // Local star helper
+    function getStarRatingHTML(rating) {
+      let starsHTML = '';
+      const fullStars = Math.floor(rating);
+      const halfStar = rating % 1 >= 0.5;
+      const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+      for (let i = 0; i < fullStars; i++) {
+        starsHTML += '<i class="bi bi-star-fill"></i>';
+      }
+      if (halfStar) {
+        starsHTML += '<i class="bi bi-star-half"></i>';
+      }
+      for (let i = 0; i < emptyStars; i++) {
+        starsHTML += '<i class="bi bi-star"></i>';
+      }
+      return starsHTML;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AuraStyle Storefront Catalog. Filter and sort through our premium products with active noise headphones, raw denim jeans, espresso barista units and skincare mud.">
+  <title>Shop Products Catalog | AuraStyle Storefront</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sticky Glassmorphism Header Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-intersect me-2"></i>AURASTYLE
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navContent">
+        <!-- Links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom active" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="category.html">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Search Bar -->
+        <form class="d-flex search-container me-3 position-relative" role="search" action="search.html" method="GET">
+          <div class="input-group">
+            <input class="form-control nav-search-input border-end-0" type="search" placeholder="Search products..." aria-label="Search" name="q" autocomplete="off" style="width: 220px; border-radius: 8px 0 0 8px;">
+            <button class="btn btn-outline-secondary border-start-0 text-muted" type="submit" style="border-color: #cbd5e1; border-radius: 0 8px 8px 0; background-color: white;">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+
+        <!-- Cart Icon dynamic badge -->
+        <div class="d-flex align-items-center">
+          <a href="cart.html" class="btn btn-outline-dark border-0 rounded-circle cart-badge-container p-2" title="View Cart">
+            <i class="bi bi-bag-heart" style="font-size: 1.35rem;"></i>
+            <span class="cart-badge badge">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Section Title -->
+  <main class="py-5 flex-grow-1">
+    <div class="container py-3">
+      
+      <div class="row">
+        <!-- Sidebar Filters (Left) -->
+        <aside class="col-lg-3 mb-4 mb-lg-0">
+          <div class="card border border-slate-subtle shadow-sm p-4 bg-white sticky-lg-top" style="top: 100px; z-index: 10;">
+            <h5 class="font-weight-bold mb-4 pb-2 border-bottom">Filters</h5>
+
+            <!-- 1. Text Search -->
+            <div class="mb-4">
+              <label for="filter-search" class="form-label font-weight-bold small text-dark" style="font-weight: 600;">Search Catalog</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-text bg-light text-muted border-end-0"><i class="bi bi-search"></i></span>
+                <input type="text" id="filter-search" class="form-control border-start-0" placeholder="Type keywords...">
+              </div>
+            </div>
+
+            <!-- 2. Categories Checkboxes -->
+            <div class="mb-4">
+              <label class="form-label font-weight-bold small text-dark" style="font-weight: 600;">Category</label>
+              <div class="d-flex flex-column gap-2">
+                <div class="form-check">
+                  <input class="form-check-input filter-input" type="checkbox" name="categoryFilter" id="cat-electronics" value="Electronics">
+                  <label class="form-check-label small text-muted" for="cat-electronics">Electronics</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input filter-input" type="checkbox" name="categoryFilter" id="cat-fashion" value="Fashion">
+                  <label class="form-check-label small text-muted" for="cat-fashion">Fashion</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input filter-input" type="checkbox" name="categoryFilter" id="cat-home" value="Home & Living">
+                  <label class="form-check-label small text-muted" for="cat-home">Home & Living</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input filter-input" type="checkbox" name="categoryFilter" id="cat-beauty" value="Beauty">
+                  <label class="form-check-label small text-muted" for="cat-beauty">Beauty</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Price range slider -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-baseline mb-2">
+                <label for="filter-price" class="form-label font-weight-bold small text-dark" style="font-weight: 600; margin-bottom:0;">Max Price</label>
+                <span id="filter-price-val" class="small text-primary font-weight-bold">600</span>
+              </div>
+              <input type="range" class="form-range filter-input" id="filter-price" min="15" max="600" step="5" value="600">
+              <div class="d-flex justify-content-between text-muted" style="font-size: 0.7rem;">
+                <span>15</span>
+                <span>600</span>
+              </div>
+            </div>
+
+            <!-- 4. Rating Stars -->
+            <div class="mb-4">
+              <label for="filter-rating" class="form-label font-weight-bold small text-dark" style="font-weight: 600;">Minimum Rating</label>
+              <select id="filter-rating" class="form-select form-select-sm filter-input">
+                <option value="">Any Rating</option>
+                <option value="4.7">4.7 ★ & above</option>
+                <option value="4.5">4.5 ★ & above</option>
+                <option value="4.3">4.3 ★ & above</option>
+                <option value="4.0">4.0 ★ & above</option>
+              </select>
+            </div>
+
+            <!-- Reset -->
+            <button onclick="resetAllFilters()" class="btn btn-outline-primary btn-sm w-100 rounded">
+              <i class="bi bi-arrow-counterclockwise"></i> Reset All Filters
+            </button>
+          </div>
+        </aside>
+
+        <!-- Products List Column (Right) -->
+        <section class="col-lg-9">
+          <!-- Toolbar -->
+          <div class="card border border-slate-subtle shadow-sm p-3 mb-4 bg-white">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3">
+              <div>
+                <span class="text-muted small">Find premium items matching your filters</span>
+              </div>
+              
+              <div class="d-flex align-items-center gap-2 align-self-sm-end">
+                <label for="catalog-sort" class="text-muted small text-nowrap" style="margin-bottom:0;">Sort by:</label>
+                <select id="catalog-sort" class="form-select form-select-sm" style="width: 160px;">
+                  <option value="featured">Featured</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="rating">Customer Rating</option>
+                  <option value="name">Alphabetical</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Grid dynamically generated by products.js -->
+          <div class="row" id="products-catalog-grid">
+            <!-- Skeleton blocks -->
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card border border-light shadow-sm" style="min-height: 380px;">
+                <div class="skeleton w-100" style="height: 220px;"></div>
+                <div class="card-body">
+                  <div class="skeleton w-25 mb-2" style="height: 12px;"></div>
+                  <div class="skeleton w-75 mb-2" style="height: 18px;"></div>
+                  <div class="skeleton w-50" style="height: 15px;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card border border-light shadow-sm" style="min-height: 380px;">
+                <div class="skeleton w-100" style="height: 220px;"></div>
+                <div class="card-body">
+                  <div class="skeleton w-25 mb-2" style="height: 12px;"></div>
+                  <div class="skeleton w-75 mb-2" style="height: 18px;"></div>
+                  <div class="skeleton w-50" style="height: 15px;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card border border-light shadow-sm" style="min-height: 380px;">
+                <div class="skeleton w-100" style="height: 220px;"></div>
+                <div class="card-body">
+                  <div class="skeleton w-25 mb-2" style="height: 12px;"></div>
+                  <div class="skeleton w-75 mb-2" style="height: 18px;"></div>
+                  <div class="skeleton w-50" style="height: 15px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination row -->
+          <nav aria-label="Catalog navigation" class="mt-4">
+            <ul class="pagination justify-content-center" id="catalog-pagination">
+              <!-- Rendered via JS -->
+            </ul>
+          </nav>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <h5 class="navbar-brand text-white font-weight-bold mb-4">
+            <i class="bi bi-intersect me-2 text-primary"></i>AURASTYLE
+          </h5>
+          <p class="small text-muted mb-4">Premium curated modern lifestyles. Offering high-fidelity audio electronics, designer hand-cut outerwear fashion, organic stoneware kitchen essentials, and clean skincare serums.</p>
+          <div class="d-flex">
+            <a href="#" class="footer-social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="footer-social-icon"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="footer-social-icon"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2 col-6 ms-md-auto">
+          <h6 class="footer-title">Quick Links</h6>
+          <a href="products.html" class="footer-link">Shop Store</a>
+          <a href="category.html" class="footer-link">Shop Categories</a>
+          <a href="about.html" class="footer-link">About Company</a>
+          <a href="contact.html" class="footer-link">Contact Desk</a>
+        </div>
+        <div class="col-md-2 col-6">
+          <h6 class="footer-title">Help & Support</h6>
+          <a href="contact.html" class="footer-link">FAQ Support</a>
+          <a href="#" class="footer-link">Delivery Rates</a>
+          <a href="#" class="footer-link">Claim Refund</a>
+          <a href="#" class="footer-link">Product Guides</a>
+        </div>
+        <div class="col-md-3">
+          <h6 class="footer-title">Contact Office</h6>
+          <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 104 Aura Boulevard, Suite 500, California</p>
+          <p class="small text-muted mb-2"><i class="bi bi-telephone me-2 text-primary"></i> +1 (800) AURA-STYLE</p>
+          <p class="small text-muted mb-2"><i class="bi bi-envelope me-2 text-primary"></i> support@aurastyle.com</p>
+        </div>
+      </div>
+      <div class="row pt-4 border-top border-white border-opacity-10 align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <p class="small text-muted mb-0">&copy; 2026 AuraStyle Storefront. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=300&auto=format&fit=crop&q=80" alt="Secure Payment Cards" class="img-fluid" style="height: 30px; object-fit: contain; filter: grayscale(1) opacity(0.5);">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-top floating button -->
+  <button class="btn-scroll-top" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Quick View Modal container placeholder (dynamic injected via products.js) -->
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Global App JS -->
+  <script src="js/app.js"></script>
+  <!-- Products Catalog JS -->
+  <script src="js/products.js"></script>
+</body>
+</html>
