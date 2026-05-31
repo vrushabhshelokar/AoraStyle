@@ -1,5 +1,5 @@
 /**
- * AuraStyle - Cart Management Module
+ * AORASTYLE - Cart Management Module
  * Loads items from localStorage, fetches full details from products.json,
  * handles quantity updates, coupon discounts, tax rates, and subtotal calculation.
  */
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!cartGrid) return; // Exit if not on cart page
 
   // Load applied coupon from localStorage if exists
-  const storedCoupon = localStorage.getItem('aurastyle_coupon');
+  const storedCoupon = localStorage.getItem('AORASTYLE_coupon');
   if (storedCoupon) {
     appliedCoupon = JSON.parse(storedCoupon);
   }
@@ -49,7 +49,7 @@ function renderCartPage() {
   const totalsContainer = document.getElementById('cart-totals-card');
   if (!container) return;
 
-  const cart = AuraState.cart;
+  const cart = AORAState.cart;
 
   if (cart.length === 0) {
     container.innerHTML = `
@@ -141,7 +141,7 @@ function renderCartPage() {
     grandTotal: grandTotal,
     couponCode: appliedCoupon ? appliedCoupon.code : null
   };
-  localStorage.setItem('aurastyle_totals', JSON.stringify(totalsObj));
+  localStorage.setItem('AORASTYLE_totals', JSON.stringify(totalsObj));
 
   // Render summaries panel
   const totalsCard = document.getElementById('cart-totals-card');
@@ -211,18 +211,18 @@ window.updateCartItemQty = function(productId, newQty) {
     return;
   }
   
-  const item = AuraState.cart.find(i => i.id === productId);
+  const item = AORAState.cart.find(i => i.id === productId);
   if (item) {
     item.quantity = newQty;
-    AuraState.saveCart();
-    AuraState.showToast("Cart updated successfully!", "success");
+    AORAState.saveCart();
+    AORAState.showToast("Cart updated successfully!", "success");
   }
 };
 
 window.removeCartItem = function(productId) {
-  AuraState.cart = AuraState.cart.filter(i => i.id !== productId);
-  AuraState.saveCart();
-  AuraState.showToast("Product removed from cart.", "error");
+  AORAState.cart = AORAState.cart.filter(i => i.id !== productId);
+  AORAState.saveCart();
+  AORAState.showToast("Product removed from cart.", "error");
 };
 
 function applyCouponCode() {
@@ -231,30 +231,30 @@ function applyCouponCode() {
 
   const code = couponInput.value.trim().toUpperCase();
   if (!code) {
-    AuraState.showToast("Please enter a coupon code.", "error");
+    AORAState.showToast("Please enter a coupon code.", "error");
     return;
   }
 
   // Simple mock codes
   if (code === 'WELCOME10') {
     appliedCoupon = { code: 'WELCOME10', discountPercent: 10, freeShipping: false };
-    AuraState.showToast("10% discount applied!", "success");
+    AORAState.showToast("10% discount applied!", "success");
   } else if (code === 'FREESHIP') {
     appliedCoupon = { code: 'FREESHIP', discountPercent: 0, freeShipping: true };
-    AuraState.showToast("Free shipping applied!", "success");
+    AORAState.showToast("Free shipping applied!", "success");
   } else {
-    AuraState.showToast("Invalid coupon code.", "error");
+    AORAState.showToast("Invalid coupon code.", "error");
     return;
   }
 
-  localStorage.setItem('aurastyle_coupon', JSON.stringify(appliedCoupon));
+  localStorage.setItem('AORASTYLE_coupon', JSON.stringify(appliedCoupon));
   couponInput.value = '';
   renderCartPage();
 }
 
 window.removeCouponCode = function() {
   appliedCoupon = null;
-  localStorage.removeItem('aurastyle_coupon');
-  AuraState.showToast("Coupon removed.", "error");
+  localStorage.removeItem('AORASTYLE_coupon');
+  AORAState.showToast("Coupon removed.", "error");
   renderCartPage();
 };

@@ -607,7 +607,7 @@ a:hover {
   right: 20px;
   z-index: 1060;
 }
-.aura-toast {
+.AORA-toast {
   background-color: white;
   border-left: 4px solid var(--primary);
   border-radius: var(--radius-sm);
@@ -619,13 +619,13 @@ a:hover {
   transform: translateX(120%);
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.aura-toast.show {
+.AORA-toast.show {
   transform: translateX(0);
 }
-.aura-toast.toast-success {
+.AORA-toast.toast-success {
   border-left-color: #10b981;
 }
-.aura-toast.toast-error {
+.AORA-toast.toast-error {
   border-left-color: #ef4444;
 }
 

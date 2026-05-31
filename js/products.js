@@ -1,5 +1,5 @@
 /**
- * AuraStyle - Products Catalog and Detail Page Module
+ * AORASTYLE - Products Catalog and Detail Page Module
  * Manages loading products from JSON, applying sidebar filters, paging,
  * quick view modals, related carousels, and detailed zoom galleries.
  */
@@ -180,7 +180,7 @@ function renderCatalogGrid() {
               <button onclick="openQuickView(${p.id})" class="btn btn-sm btn-light border shadow-sm" title="Quick View">
                 <i class="bi bi-eye"></i> Quick View
               </button>
-              <button onclick="AuraState.addToCart(${p.id})" class="btn btn-sm btn-primary shadow-sm" title="Add to Cart">
+              <button onclick="AORAState.addToCart(${p.id})" class="btn btn-sm btn-primary shadow-sm" title="Add to Cart">
                 <i class="bi bi-cart-plus"></i> Add
               </button>
             </div>
@@ -340,7 +340,7 @@ window.decrementQuickQty = function() {
 window.addQuickToCart = function(productId) {
   const el = document.getElementById('quick-qty-val');
   const qty = el ? parseInt(el.value) : 1;
-  AuraState.addToCart(productId, qty);
+  AORAState.addToCart(productId, qty);
   
   // Close modal
   const modalEl = document.getElementById('quickViewModal');
@@ -545,7 +545,7 @@ window.decrementDetailQty = function() {
 window.addDetailToCart = function(productId) {
   const el = document.getElementById('detail-qty-val');
   const qty = el ? parseInt(el.value) : 1;
-  AuraState.addToCart(productId, qty);
+  AORAState.addToCart(productId, qty);
 };
 
 window.buyNow = function(productId) {
@@ -553,7 +553,7 @@ window.buyNow = function(productId) {
   const qty = el ? parseInt(el.value) : 1;
   
   // Clear any potential matching items or just add & update
-  AuraState.addToCart(productId, qty);
+  AORAState.addToCart(productId, qty);
   // Redirect directly to checkout
   window.location.href = "checkout.html";
 };
@@ -620,7 +620,7 @@ function renderRelatedProducts(currentProduct) {
               <button onclick="openQuickView(${p.id})" class="btn btn-sm btn-light border shadow-sm">
                 <i class="bi bi-eye"></i> Quick View
               </button>
-              <button onclick="AuraState.addToCart(${p.id})" class="btn btn-sm btn-primary shadow-sm">
+              <button onclick="AORAState.addToCart(${p.id})" class="btn btn-sm btn-primary shadow-sm">
                 <i class="bi bi-cart-plus"></i> Add
               </button>
             </div>

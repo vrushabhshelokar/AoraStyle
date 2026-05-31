@@ -1,5 +1,5 @@
 /**
- * AuraStyle - Search Page Module
+ * AORASTYLE - Search Page Module
  * Reads query terms, filters products database matching name, category, or description,
  * updates search results layout, and responds to live keystrokes.
  */
@@ -102,7 +102,7 @@ function performSearch(term) {
               <button onclick="openQuickView(${p.id})" class="btn btn-sm btn-light border shadow-sm">
                 <i class="bi bi-eye"></i> Quick View
               </button>
-              <button onclick="AuraState.addToCart(${p.id})" class="btn btn-sm btn-primary shadow-sm">
+              <button onclick="AORAState.addToCart(${p.id})" class="btn btn-sm btn-primary shadow-sm">
                 <i class="bi bi-cart-plus"></i> Add
               </button>
             </div>

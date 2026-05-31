@@ -1,5 +1,5 @@
 /**
- * AuraStyle - Global JavaScript Helper Module
+ * AORASTYLE - Global JavaScript Helper Module
  * Handles shared page layouts, cart count badge, search auto-complete dropdown,
  * toast alerts, and scroll interactions.
  */
@@ -17,7 +17,7 @@ window.formatPrice = function(amount) {
 };
 
 // Local products database to prevent CORS issues when opening files directly via file://
-window.AuraProducts = [
+window.AORAProducts = [
   {
     "id": 1,
     "name": "AeroSync Wireless Headphones",
@@ -538,8 +538,8 @@ window.AuraProducts = [
       return Promise.resolve({
         ok: true,
         status: 200,
-        json: function() { return Promise.resolve(window.AuraProducts); },
-        text: function() { return Promise.resolve(JSON.stringify(window.AuraProducts)); }
+        json: function() { return Promise.resolve(window.AORAProducts); },
+        text: function() { return Promise.resolve(JSON.stringify(window.AORAProducts)); }
       });
     }
     return originalFetch(url, options);
@@ -547,7 +547,7 @@ window.AuraProducts = [
 })();
 
 // Global State object
-window.AuraState = {
+window.AORAState = {
   cart: [],
   products: [],
   init: function() {
@@ -561,7 +561,7 @@ window.AuraState = {
   // Load cart from localStorage
   loadCart: function() {
     try {
-      const storedCart = localStorage.getItem('aurastyle_cart');
+      const storedCart = localStorage.getItem('AORASTYLE_cart');
       this.cart = storedCart ? JSON.parse(storedCart) : [];
     } catch (e) {
       console.error("Failed to load cart from localStorage", e);
@@ -571,7 +571,7 @@ window.AuraState = {
 
   // Save cart to localStorage
   saveCart: function() {
-    localStorage.setItem('aurastyle_cart', JSON.stringify(this.cart));
+    localStorage.setItem('AORASTYLE_cart', JSON.stringify(this.cart));
     this.updateCartBadge();
     // Dispatch custom event to let pages know cart changed
     window.dispatchEvent(new CustomEvent('cartUpdated', { detail: this.cart }));
@@ -612,7 +612,7 @@ window.AuraState = {
     }
 
     const toast = document.createElement('div');
-    toast.className = `aura-toast toast-${type}`;
+    toast.className = `AORA-toast toast-${type}`;
     
     const icon = type === 'success' 
       ? '<i class="bi bi-check-circle-fill text-success"></i>' 
@@ -760,5 +760,5 @@ window.AuraState = {
 
 // Initialize common module on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
-  AuraState.init();
+  AORAState.init();
 });

@@ -1,5 +1,5 @@
 /**
- * AuraStyle - Checkout Page Module
+ * AORASTYLE - Checkout Page Module
  * Loads order totals, renders right sidebar order items summary,
  * implements shipping/billing forms jQuery validation, and processes payment.
  */
@@ -9,13 +9,13 @@ $(document).ready(function() {
   if (!checkoutItemsContainer) return; // Exit if not on checkout page
 
   // Check if cart is empty, if so, redirect back to cart
-  if (AuraState.cart.length === 0) {
+  if (AORAState.cart.length === 0) {
     window.location.href = 'cart.html';
     return;
   }
 
   // Load totals and load product database
-  let totals = JSON.parse(localStorage.getItem('aurastyle_totals')) || {
+  let totals = JSON.parse(localStorage.getItem('AORASTYLE_totals')) || {
     subtotal: 0,
     discount: 0,
     shipping: 15,
@@ -50,16 +50,16 @@ $(document).ready(function() {
     let applied = null;
     if (code === 'WELCOME10') {
       applied = { code: 'WELCOME10', discountPercent: 10, freeShipping: false };
-      AuraState.showToast("10% discount applied!", "success");
+      AORAState.showToast("10% discount applied!", "success");
     } else if (code === 'FREESHIP') {
       applied = { code: 'FREESHIP', discountPercent: 0, freeShipping: true };
-      AuraState.showToast("Free shipping applied!", "success");
+      AORAState.showToast("Free shipping applied!", "success");
     } else {
-      AuraState.showToast("Invalid coupon code.", "error");
+      AORAState.showToast("Invalid coupon code.", "error");
       return;
     }
 
-    localStorage.setItem('aurastyle_coupon', JSON.stringify(applied));
+    localStorage.setItem('AORASTYLE_coupon', JSON.stringify(applied));
     
     // Recompute totals
     recalculateCheckoutTotals(applied);
@@ -161,7 +161,7 @@ function renderCheckoutSummary(products, totals) {
   const container = document.getElementById('checkout-items-summary');
   if (!container) return;
 
-  const cart = AuraState.cart;
+  const cart = AORAState.cart;
   let itemsHTML = '';
 
   cart.forEach(item => {
@@ -206,7 +206,7 @@ function updateTotalsUI(totals) {
 }
 
 function recalculateCheckoutTotals(coupon) {
-  let totals = JSON.parse(localStorage.getItem('aurastyle_totals')) || { subtotal: 0 };
+  let totals = JSON.parse(localStorage.getItem('AORASTYLE_totals')) || { subtotal: 0 };
   const subtotal = totals.subtotal;
   
   let discount = 0;
@@ -231,19 +231,19 @@ function recalculateCheckoutTotals(coupon) {
     couponCode: coupon.code
   };
 
-  localStorage.setItem('aurastyle_totals', JSON.stringify(newTotals));
+  localStorage.setItem('AORASTYLE_totals', JSON.stringify(newTotals));
   updateTotalsUI(newTotals);
 }
 
 function processOrderSubmission() {
   // Show spinner or processing toast
-  AuraState.showToast("Processing payment. Please wait...", "success");
+  AORAState.showToast("Processing payment. Please wait...", "success");
 
   // Generate random order fields
   const orderNum = 'AUR-' + Math.floor(100000 + Math.random() * 900000) + '-' + Array.from({length: 3}, () => String.fromCharCode(65 + Math.floor(Math.random() * 26))).join('');
   
   // Package order details
-  const finalTotals = JSON.parse(localStorage.getItem('aurastyle_totals'));
+  const finalTotals = JSON.parse(localStorage.getItem('AORASTYLE_totals'));
   const customerEmail = $('#email').val();
   const customerName = $('#firstName').val() + ' ' + $('#lastName').val();
 
@@ -251,20 +251,20 @@ function processOrderSubmission() {
     orderNumber: orderNum,
     name: customerName,
     email: customerEmail,
-    itemsCount: AuraState.cart.reduce((tot, item) => tot + item.quantity, 0),
+    itemsCount: AORAState.cart.reduce((tot, item) => tot + item.quantity, 0),
     total: finalTotals.grandTotal,
     date: new Date().toLocaleDateString(),
     deliveryDate: new Date(Date.now() + 4 * 24 * 60 * 60 * 1000).toLocaleDateString() // 4 days later
   };
 
   // Save order to history and active order slot
-  localStorage.setItem('aurastyle_last_order', JSON.stringify(orderReceipt));
+  localStorage.setItem('AORASTYLE_last_order', JSON.stringify(orderReceipt));
 
   // Reset cart, totals and coupon codes
-  AuraState.cart = [];
-  AuraState.saveCart();
-  localStorage.removeItem('aurastyle_totals');
-  localStorage.removeItem('aurastyle_coupon');
+  AORAState.cart = [];
+  AORAState.saveCart();
+  localStorage.removeItem('AORASTYLE_totals');
+  localStorage.removeItem('AORASTYLE_coupon');
 
   setTimeout(() => {
     // Redirect to success confirmation page
